@@ -1,12 +1,15 @@
 package TimePlanner.Backend.Controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import java.io.*;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import TimePlanner.Backend.Models.Profile;
 
-public class ProfileController {
+public class ProfileController implements Initializable {
 
     @FXML
     private TextField nomField;
@@ -20,9 +23,6 @@ public class ProfileController {
     @FXML
     private TextField telephoneField;
 
-    @FXML
-    private TextField BdayField;
-
     /*
      * 
      * 
@@ -33,8 +33,9 @@ public class ProfileController {
      */
     // name fo the file is : "username.ser"
     // username = name tolowercase + white spaces removed
-    private String username = nomField.getText().toLowerCase().replace(" ", "");
+    // private String username = nomField.getText().toLowerCase().replace(" ", "");
 
+    private String username = "imene";
     private Profile profile;
 
     /*
@@ -45,6 +46,12 @@ public class ProfileController {
      * 
      */
     // Deserialize the profile object from the file and populate the text fields
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        initializeProfile();
+    }
+
     private void initializeProfile() {
         profile = deserializeProfile(username);
 
@@ -53,7 +60,6 @@ public class ProfileController {
             emailField.setText(profile.getEmail());
             passwordField.setText(profile.getPassword());
             telephoneField.setText(profile.getTelephone());
-            BdayField.setText(profile.getBirthday());
         }
     }
 
@@ -75,14 +81,12 @@ public class ProfileController {
         String email = emailField.getText();
         String password = passwordField.getText();
         String telephone = telephoneField.getText();
-        String dob = BdayField.getText();
 
         // Update the profile object with the new values
         profile.setNom(name);
         profile.setEmail(email);
         profile.setPassword(password);
         profile.setTelephone(telephone);
-        profile.setBirthday(dob);
 
         // Serialize the profile object to a file
         serializeProfile(profile);
@@ -100,7 +104,7 @@ public class ProfileController {
 
     private void serializeProfile(Profile profile) {
         try {
-            FileOutputStream fileOut = new FileOutputStream(username + ".ser");
+            FileOutputStream fileOut = new FileOutputStream("./src/TimePlanner/UsersInformation/" + username + ".ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(profile);
             out.close();
@@ -123,7 +127,7 @@ public class ProfileController {
 
     private Profile deserializeProfile(String username) {
         try {
-            FileInputStream fileIn = new FileInputStream(username + ".ser");
+            FileInputStream fileIn = new FileInputStream("./src/TimePlanner/UsersInformation/" + username + ".ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             Profile profile = (Profile) in.readObject();
             in.close();
@@ -131,8 +135,10 @@ public class ProfileController {
             System.out.println("Profile deserialized successfully.");
             return profile;
         } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error deserializing the profile");
             e.printStackTrace();
         }
         return null;
     }
+
 }

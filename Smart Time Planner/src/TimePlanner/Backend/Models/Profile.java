@@ -7,14 +7,15 @@ public class Profile implements Serializable {
     private String email;
     private String password;
     private String telephone;
-    private String birthday;
 
-    public Profile(String nom, String email, String password, String telephone, String birthday) {
+    public Profile(String nom, String email, String password, String telephone) {
         this.nom = nom;
         this.email = email;
         this.password = password;
         this.telephone = telephone;
-        this.birthday = birthday;
+
+        String username = nom.toLowerCase().replace(" ", "");
+        serializeProfile("./src/TimePlanner/UsersInformation/" + username + ".ser");
     }
 
     public Profile() {
@@ -22,9 +23,17 @@ public class Profile implements Serializable {
         this.email = null;
         this.password = null;
         this.telephone = null;
-        this.birthday = null;
     }
 
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     */
     public String getNom() {
         return this.nom;
     }
@@ -41,9 +50,17 @@ public class Profile implements Serializable {
         return this.telephone;
     }
 
-    public String getBirthday() {
-        return this.birthday;
-    }
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     */
 
     public void setNom(String nom) {
         this.nom = nom;
@@ -61,9 +78,17 @@ public class Profile implements Serializable {
         this.telephone = telephone;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     */
 
     public static void saveProfile(Profile profile) {
         try {
@@ -78,6 +103,16 @@ public class Profile implements Serializable {
         }
     }
 
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     */
+
     public static Profile loadProfile(String username) {
         try {
             FileInputStream fileIn = new FileInputStream(username + ".ser");
@@ -89,6 +124,29 @@ public class Profile implements Serializable {
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Failed to load profile: " + e.getMessage());
             return null;
+        }
+    }
+
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     */
+
+    private void serializeProfile(String filepath) {
+        try {
+            FileOutputStream fileOut = new FileOutputStream(filepath);
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(this);
+            out.close();
+            fileOut.close();
+            System.out.println("Serialized profile object created for " + this.nom + ".");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

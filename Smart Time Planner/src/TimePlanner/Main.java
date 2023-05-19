@@ -1,5 +1,6 @@
 package TimePlanner;
 
+import TimePlanner.Backend.Models.Profile;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +17,15 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    /*
+     * private static void createSerializedProfile() {
+     * // Create a sample profile object
+     * Profile profile = new Profile("Imene", "imene@example.com", "password123",
+     * "1234567890");
+     * }
+     */
     public static void main(String[] args) {
+        // createSerializedProfile();
         launch(args);
     }
 }

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.ProfileController">
    <left>
       <VBox prefHeight="600.0" prefWidth="235.0" styleClass="primary-color" BorderPane.alignment="CENTER">
          <children>
@@ -221,7 +221,7 @@
                               <Insets right="80.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" />
+                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" fx:id= "nomField"/>
                      </children>
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" />
@@ -235,7 +235,7 @@
                               <Insets right="80.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" />
+                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" fx:id= "emailField"/>
                      </children>
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" />
@@ -249,7 +249,7 @@
                               <Insets right="80.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" />
+                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" fx:id= "passwordField"/>
                      </children>
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" />
@@ -264,7 +264,7 @@
                               <Insets right="80.0" />
                            </HBox.margin>
                         </Label>
-                        <DatePicker prefHeight="26.0" prefWidth="348.0" styleClass="Datepicker" />
+                        <DatePicker prefHeight="26.0" prefWidth="348.0" styleClass="Datepicker" fx:id="BdayField" />
                      </children>
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" />
@@ -289,7 +289,7 @@
                               <Insets right="80.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" />
+                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" fx:id="telephoneField"/>
                      </children>
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" />

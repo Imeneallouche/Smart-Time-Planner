@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #00002c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Java.Architecture.Frontend.Pages.Registration.Registration">
+   <children>
+      <VBox alignment="CENTER" layoutX="153.0" layoutY="161.0" prefHeight="379.0" prefWidth="579.0" spacing="25.0">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets left="50.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="200.0">
+               <children>
+                  <Label prefWidth="100.0" text="Nom" textFill="#f4f4f4">
+                     <HBox.margin>
+                        <Insets right="80.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField prefHeight="26.0" prefWidth="348.0" styleClass="Registration-input" stylesheets="@Registration.css" />
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="26.0" prefWidth="98.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="144.0" text="Prenom" textFill="#f4f4f4">
+                     <HBox.margin>
+                        <Insets right="80.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField prefHeight="26.0" prefWidth="348.0" styleClass="Registration-input" stylesheets="@Registration.css" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="200.0">
+               <children>
+                  <Label prefWidth="100.0" text="email" textFill="#f4f4f4">
+                     <HBox.margin>
+                        <Insets right="80.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField prefHeight="26.0" prefWidth="348.0" styleClass="Registration-input" stylesheets="@Registration.css" />
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="200.0">
+               <children>
+                  <Label prefWidth="100.0" text="mot de passe" textFill="#f4f4f4">
+                     <HBox.margin>
+                        <Insets right="80.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField accessibleRole="PASSWORD_FIELD" blendMode="SRC_ATOP" prefHeight="26.0" prefWidth="348.0" promptText="o" styleClass="Registration-input" stylesheets="@Registration.css" />
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets left="50.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets left="50.0" right="10.0" top="30.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets left="50.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="46.0" prefWidth="604.0">
+               <VBox.margin>
+                  <Insets left="50.0" right="10.0" top="20.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="110.0" layoutY="143.0" style="-fx-background-color: #242551; -fx-border-radius: 12px;">
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="290.0" style="-fx-border-radius: 30;" text="Ajouter un nouveau utilisateur" textAlignment="CENTER" textFill="#f4f4f4">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: 121137;" styleClass="secondary-color">
+         <children>
+            <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f2f2f2;">
+               <children>
+                  <AnchorPane prefHeight="503.0" prefWidth="382.0" style="-fx-background-color: #13123a;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="61.0" fitWidth="54.0" layoutX="132.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@ellipse2.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="5.0" layoutX="89.0" layoutY="295.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="90.0" prefWidth="200.0" text="Manage your tasks and ideas quickly" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="Segoe UI Emoji" size="19.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="118.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@ellipse.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="115.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@vector.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="132.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@notebook.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="61.0" fitWidth="54.0" layoutX="244.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@lamp.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Pane layoutX="465.0" layoutY="117.0" AnchorPane.bottomAnchor="56.0" AnchorPane.topAnchor="117.0">
+                     <children>
+                        <Button fx:id="btnSignin1" layoutX="4.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="137.0" style="-fx-background-color: transparent; -fx-underline: true; -fx-text-fill: blue; -fx-text-fill: #0707e3;" stylesheets="@../../../../../../../../styling/fullpackstyling.css" text="Forget password" />
+                        <TextField fx:id="txtUsername" layoutX="7.0" layoutY="23.0" prefHeight="34.0" prefWidth="333.0" promptText="username or email" />
+                        <PasswordField fx:id="txtPassword" layoutX="7.0" layoutY="83.0" prefHeight="34.0" prefWidth="333.0" promptText="password" stylesheets="@../../../../../../../../styling/fullpackstyling.css" />
+                        <Button fx:id="btnSignin" layoutX="174.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="165.0" stylesheets="@../../../../../../../../styling/fullpackstyling.css" text="Sign in" />
+                        <ButtonBar layoutX="8.0" layoutY="155.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </ButtonBar>
+                        <Button fx:id="btnSignup" layoutX="-1.0" layoutY="296.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="346.0" stylesheets="@../../../../../../../../styling/fullpackstyling.css" text="Sign up" />
+                        <Separator layoutY="272.0" prefHeight="5.0" prefWidth="342.0" />
+                        <Label alignment="CENTER" layoutX="156.0" layoutY="263.0" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: #f2f2f2;" text="Or" textFill="#5b5a5a">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblErrors" alignment="CENTER" layoutX="8.0" layoutY="95.0" prefHeight="23.0" prefWidth="275.0" textFill="#ff6354">
+                           <font>
+                              <Font name="Segoe UI" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="56.0" fitWidth="234.0" layoutX="528.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@titleblack.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

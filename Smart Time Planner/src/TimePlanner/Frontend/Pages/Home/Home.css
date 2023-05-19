@@ -1,0 +1,9 @@
+.home-page {
+  background-color: #f5f5f5; /* Set the background color */
+}
+
+.title-label {
+  font-size: 24px;
+  font-weight: bold;
+  -fx-text-fill: #333333; /* Set the text color */
+}

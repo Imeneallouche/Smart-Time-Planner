@@ -8,14 +8,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../../values/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <VBox prefHeight="600.0" prefWidth="410.0" styleClass="third-color" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="106.0" prefWidth="394.0">
                <children>
-                  <Label text="Step 01" textFill="#f7a579">
+                  <Label text="Step 02" textFill="#f7a579">
                      <font>
                         <Font name="Berlin Sans FB" size="40.0" />
                      </font>
@@ -26,22 +25,22 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="116.0" prefWidth="443.0">
                      <children>
-                        <Label text="Before starting the journey and stepping into our application" textFill="#f4f4f4">
+                        <Label text="We are not far from accomplishing the primary steps " textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text=" you firstly need to fulfill some steps" textFill="#f4f4f4">
+                        <Label text="Let's loop through each day of the schedule" textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="Let's start by configuring your" textFill="#f4f4f4">
+                        <Label text="And specify for each one" textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="schedule period" textFill="#f7a579">
+                        <Label text="their free Creneaux" textFill="#f7a579">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -52,9 +51,9 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="378.0" prefWidth="394.0">
                <children>
-                  <ImageView fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../assets/CalendarChoice.png" />
+                        <Image url="@../../assets/CreneauxLibres.png" />
                      </image>
                   </ImageView>
                </children>

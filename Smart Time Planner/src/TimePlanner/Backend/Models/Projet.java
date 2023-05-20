@@ -6,14 +6,12 @@ import java.util.List;
 
 public class Projet {
     private String nom;
-    private LocalDate dateDebut;
-    private LocalDate dateFinPrevues;
+    private Periode period;
     private List<Tache> taches;
 
     public Projet(String nom, LocalDate dateDebut, LocalDate dateFinPrevues) {
+        this.period = new Periode(dateDebut, dateFinPrevues);
         this.nom = nom;
-        this.dateDebut = dateDebut;
-        this.dateFinPrevues = dateFinPrevues;
         this.taches = new ArrayList<>();
     }
 
@@ -25,20 +23,8 @@ public class Projet {
         this.nom = nom;
     }
 
-    public LocalDate getDateDebut() {
-        return dateDebut;
-    }
-
-    public void setDateDebut(LocalDate dateDebut) {
-        this.dateDebut = dateDebut;
-    }
-
-    public LocalDate getDateFinPrevues() {
-        return dateFinPrevues;
-    }
-
-    public void setDateFinPrevues(LocalDate dateFinPrevues) {
-        this.dateFinPrevues = dateFinPrevues;
+    public Periode getDateDebut() {
+        return period;
     }
 
     public List<Tache> getTaches() {

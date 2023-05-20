@@ -13,8 +13,3 @@
 .selected:hover {
   -fx-background-color: #3c3d58;
 }
-
-.Datepicker {
-  -fx-control-inner-background: #00002c;
-  -fx-border-color: #242551;
-}

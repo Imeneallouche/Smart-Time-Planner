@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.PeriodChoiceController">
+   <left>
+      <VBox prefHeight="600.0" prefWidth="410.0" styleClass="third-color" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="106.0" prefWidth="394.0">
+               <children>
+                  <Label text="Step 01" textFill="#f7a579">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="116.0" prefWidth="394.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="116.0" prefWidth="443.0">
+                     <children>
+                        <Label text="Before starting the journey and stepping into our application" textFill="#f4f4f4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text=" you firstly need to fulfill some steps" textFill="#f4f4f4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Let's start by configuring your" textFill="#f4f4f4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="schedule period" textFill="#f7a579">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="378.0" prefWidth="394.0">
+               <children>
+                  <ImageView fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/CalendarChoice.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="600.0" prefWidth="490.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="75.0" prefWidth="490.0">
+               <children>
+                  <Label text="Choose your schedule period" textFill="#242551">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <VBox prefHeight="86.0" prefWidth="512.0">
+                     <padding>
+                        <Insets bottom="20.0" left="30.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <Label text="Projetc's name">
+                           <padding>
+                              <Insets bottom="5.0" right="10.0" top="20.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="prejectName" maxWidth="180.0" minWidth="-Infinity" prefHeight="26.0" prefWidth="354.0" styleClass="input" />
+                        <Label text="There should be a Project name" textFill="#b71d1d" fx:id="projectName"/>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="143.0" prefWidth="490.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="163.0" prefWidth="490.0">
+                     <children>
+                        <Label text="The first date of your period">
+                           <padding>
+                              <Insets bottom="5.0" right="10.0" top="20.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="firstday" prefHeight="42.0" prefWidth="354.0" styleClass="Datepicker" />
+                        <Label fx:id="FirstErrorMessage" prefHeight="18.0" prefWidth="356.0" text="First date should be greater or equals to the current date" textFill="#b71d1d" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="30.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="143.0" prefWidth="490.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="163.0" prefWidth="490.0">
+                     <children>
+                        <Label text="The last date of your period">
+                           <padding>
+                              <Insets bottom="5.0" right="10.0" top="20.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="lastday" prefHeight="42.0" prefWidth="354.0" styleClass="Datepicker" />
+                        <Label fx:id="SecondErrorMessage" prefHeight="18.0" prefWidth="356.0" text="Last date should be greater or equals to the first date" textFill="#b71d1d" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="30.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="143.0" prefWidth="490.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="163.0" prefWidth="245.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="30.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <Button mnemonicParsing="false" styleClass="Cancel-Button" text="Cancel" onAction="#CancelandExit">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="15.0" left="40.0" right="40.0" top="15.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="163.0" prefWidth="245.0">
+                     <padding>
+                        <Insets bottom="20.0" left="30.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <Button fx:id="ScheduleButton" mnemonicParsing="false" onAction="#CheckandSet" styleClass="Schedule-Button" text="Schedule" textFill="#f4f4f4">
+                           <padding>
+                              <Insets bottom="15.0" left="40.0" right="40.0" top="15.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+   <stylesheets>
+      <URL value="@../../values/styles.css" />
+      <URL value="@PeriodChoice.css" />
+   </stylesheets>
+</BorderPane>

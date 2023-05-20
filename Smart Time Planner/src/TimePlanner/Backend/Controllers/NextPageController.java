@@ -1,5 +1,5 @@
 package TimePlanner.Backend.Controllers;
 
-public class HomeController {
+public class NextPageController {
 
 }

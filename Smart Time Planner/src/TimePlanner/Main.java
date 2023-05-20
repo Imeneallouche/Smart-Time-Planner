@@ -1,6 +1,5 @@
 package TimePlanner;
 
-import TimePlanner.Backend.Models.Profile;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,9 +10,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Frontend/Pages/Profile/Profile.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Frontend/Pages/PeriodChoice/periodChoice.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 1228, 740));
+        primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
     }
 

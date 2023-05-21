@@ -8,6 +8,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import TimePlanner.Backend.Models.Profile;
+import TimePlanner.Backend.Models.Utilisateur;
+import TimePlanner.Backend.Services.DataManager;
 
 public class ProfileController implements Initializable {
 
@@ -35,8 +37,7 @@ public class ProfileController implements Initializable {
     // username = name tolowercase + white spaces removed
     // private String username = nomField.getText().toLowerCase().replace(" ", "");
 
-    private String username = "imene";
-    private Profile profile;
+    Utilisateur utilisateur = DataManager.getInstance().getUtilisateur();
 
     /*
      * 
@@ -53,13 +54,12 @@ public class ProfileController implements Initializable {
     }
 
     private void initializeProfile() {
-        profile = deserializeProfile(username);
 
-        if (profile != null) {
-            nomField.setText(profile.getNom());
-            emailField.setText(profile.getEmail());
-            passwordField.setText(profile.getPassword());
-            telephoneField.setText(profile.getTelephone());
+        if (utilisateur != null) {
+            nomField.setText(utilisateur.getProfile().getNom());
+            emailField.setText(utilisateur.getProfile().getEmail());
+            passwordField.setText(utilisateur.getProfile().getPassword());
+            telephoneField.setText(utilisateur.getProfile().getTelephone());
         }
     }
 
@@ -82,14 +82,16 @@ public class ProfileController implements Initializable {
         String password = passwordField.getText();
         String telephone = telephoneField.getText();
 
-        // Update the profile object with the new values
-        profile.setNom(name);
-        profile.setEmail(email);
-        profile.setPassword(password);
-        profile.setTelephone(telephone);
+        Profile profile = new Profile(name, email, password, telephone);
 
-        // Serialize the profile object to a file
-        serializeProfile(profile);
+        // Update the profile object with the new values
+        utilisateur.setProfile(profile);
+
+        // Update the data manager as well
+        DataManager.getInstance().setUtilisateur(utilisateur);
+
+        // Serialize the new utilisateur object to a file
+        serializeProfile(utilisateur);
     }
 
     /*
@@ -102,11 +104,14 @@ public class ProfileController implements Initializable {
      * 
      */
 
-    private void serializeProfile(Profile profile) {
+    private void serializeProfile(Utilisateur utilisateur) {
+
+        String username = utilisateur.getProfile().getNom().toLowerCase().replaceAll(" ", "");
+
         try {
             FileOutputStream fileOut = new FileOutputStream("./src/TimePlanner/UsersInformation/" + username + ".ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(profile);
+            out.writeObject(utilisateur);
             out.close();
             fileOut.close();
             System.out.println("Profile serialized successfully.");
@@ -125,20 +130,23 @@ public class ProfileController implements Initializable {
      * 
      */
 
-    private Profile deserializeProfile(String username) {
-        try {
-            FileInputStream fileIn = new FileInputStream("./src/TimePlanner/UsersInformation/" + username + ".ser");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-            Profile profile = (Profile) in.readObject();
-            in.close();
-            fileIn.close();
-            System.out.println("Profile deserialized successfully.");
-            return profile;
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Error deserializing the profile");
-            e.printStackTrace();
-        }
-        return null;
-    }
+    /*
+     * private Profile deserializeProfile(String username) {
+     * try {
+     * FileInputStream fileIn = new
+     * FileInputStream("./src/TimePlanner/UsersInformation/" + username + ".ser");
+     * ObjectInputStream in = new ObjectInputStream(fileIn);
+     * Profile profile = (Profile) in.readObject();
+     * in.close();
+     * fileIn.close();
+     * System.out.println("Profile deserialized successfully.");
+     * return profile;
+     * } catch (IOException | ClassNotFoundException e) {
+     * System.out.println("Error deserializing the profile");
+     * e.printStackTrace();
+     * }
+     * return null;
+     * }
+     */
 
 }

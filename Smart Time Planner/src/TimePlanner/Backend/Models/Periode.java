@@ -1,18 +1,22 @@
 package TimePlanner.Backend.Models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class Periode {
+public class Periode implements Serializable {
 
     private LocalDate startDate;
     private LocalDate endDate;
 
     // private
-    private ArrayList<ArrayList<Creneau>> CreneauxLibres = new ArrayList<>();
+    private ArrayList<ArrayList<Creneau>> CreneauxLibres;
 
     public Periode(LocalDate start, LocalDate end) {
         this.startDate = start;
         this.endDate = end;
+
+        this.CreneauxLibres = new ArrayList<>();
     }
     /*
      * 
@@ -30,6 +34,10 @@ public class Periode {
         return endDate;
     }
 
+    public ArrayList<ArrayList<Creneau>> getCreneaux() {
+        return CreneauxLibres;
+    }
+
     /*
      * 
      * 
@@ -45,5 +53,9 @@ public class Periode {
 
     public void setEndDate(LocalDate end) {
         this.endDate = end;
+    }
+
+    public void setCreneaux(ArrayList<ArrayList<Creneau>> creneaux) {
+        this.CreneauxLibres = creneaux;
     }
 }

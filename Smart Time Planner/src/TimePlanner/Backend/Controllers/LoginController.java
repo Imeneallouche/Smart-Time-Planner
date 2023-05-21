@@ -1,18 +1,20 @@
 package TimePlanner.Backend.Controllers;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 
 import TimePlanner.Backend.Models.Utilisateur;
 import TimePlanner.Backend.Services.DataManager;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class LoginController {
 
@@ -20,9 +22,35 @@ public class LoginController {
     private TextField usernameField;
 
     @FXML
+    private Label usernameErrorMessage;
+
+    @FXML
     private PasswordField passwordField;
 
-    public void loginButtonClicked(ActionEvent event) {
+    @FXML
+    private Label passwordErrorMessage;
+
+    @FXML
+    private Button SignInButton;
+
+    @FXML
+    private Button SignUpButton;
+
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * EVENT LISTENER FOR THE SIGNIN BUTTON CLICK
+     */
+
+    @FXML
+    public void SignIn() {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
@@ -34,43 +62,113 @@ public class LoginController {
             DataManager.getInstance().setUtilisateur(utilisateur);
 
             // Load the next page
-            loadNextPage(event);
-        } else {
-            // Handle login failure
-            showErrorMessage("Invalid username or password");
+            loadNextPage(utilisateur);
         }
     }
 
-    private Utilisateur authenticate(String username, String password) {
-        // Perform authentication logic and retrieve the Utilisateur object
-        Utilisateur user = new Utilisateur(); // Replace this with your actual authentication logic
-        return user;
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * AUTHENTIFICATION
+     */
+
+    @FXML
+    public void SignUp() {
+
     }
 
-    private void loadNextPage(ActionEvent event) {
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * AUTHENTIFICATION
+     */
+
+    private Utilisateur authenticate(String username, String password) {
+
+        String pseudo = username.toLowerCase().replaceAll(" ", "");
+        String filename = "./src/TimePlanner/UsersInformation/" + pseudo + ".ser";
+
+        File file = new File(filename);
+
+        if (file.exists()) {
+            Utilisateur utilisateur = null;
+            try (FileInputStream fileInputStream = new FileInputStream(file);
+                    ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
+
+                utilisateur = (Utilisateur) objectInputStream.readObject();
+                String storedUsername = utilisateur.getProfile().getNom();
+                String storedPassword = utilisateur.getProfile().getPassword();
+
+                if (username.equals(storedUsername) && password.equals(storedPassword)) {
+                    return utilisateur;
+                } else {
+                    passwordErrorMessage.setText("Invalid password");
+                }
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("Working Directory: " + System.getProperty("user.dir"));
+            System.out.println("File Path: " + file.getAbsolutePath());
+            usernameErrorMessage.setText("Username does not exist");
+        }
+        return null;
+    }
+
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * GO TO THE NEXT APPROPRIATE PAGE
+     */
+
+    private void loadNextPage(Utilisateur utilisateur) {
+
+        String nextPage;
+
+        // IF THIS IS THE FIRST TIME THE USER ENTERS The app (NO PROJECT YET)
+        // WE REDIRECT HIM TO THE 2 INITIAL STEPS (CALENDAR & CRENEAUXLIBRES)
+        if (utilisateur.getProjets_en_cours() == null || utilisateur.getProjets_en_cours().size() == 0) {
+            nextPage = "../../Frontend/Pages/PeriodChoice/PeriodChoice.fxml";
+        }
+
+        // ELSE (IF HE ALREADY GOT PROJECTS AND ENTERED BEFORE)
+        // WE REDIRECT HIM TO THE HOME PAGE
+        else {
+            nextPage = "../../Frontend/Pages/Profile/Profile.fxml";
+        }
+
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Profile.fxml"));
-            Parent root = loader.load();
 
-            // Access the controller for the next page
-            // ProfileController profileController = loader.getController();
+            Parent next = FXMLLoader.load(getClass().getResource(nextPage));
 
-            // Pass the Utilisateur object to the ProfileController
-            // profileController.setUtilisateur(DataManager.getInstance().getUtilisateur());
+            // Get the current scene
+            Scene currentScene = SignUpButton.getScene();
 
-            // Show the next page
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
+            // Set the root of the current scene to the Step2 root
+            currentScene.setRoot(next);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
 
-    private void showErrorMessage(String message) {
-        // Show an error message to the user
-        // ...
     }
 
 }

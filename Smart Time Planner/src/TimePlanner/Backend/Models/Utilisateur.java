@@ -1,9 +1,18 @@
 package TimePlanner.Backend.Models;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.*;
 
-public class Utilisateur {
+public class Utilisateur implements Serializable {
+
+    private static final long serialVersionUID = 6529685098267757690L;
+
     private Profile profile;
+
+    private ArrayList<Projet> projets_en_cours;
 
     private ArrayList<String> badge_gagnes;
 
@@ -14,8 +23,6 @@ public class Utilisateur {
 
     private ArrayList<String> taches_journalieres;
 
-    private ArrayList<String> projets_en_cours;
-
     private ArrayList<String> categorie_taches;
     private HashMap<String, Integer> duree_travaillee;
 
@@ -24,7 +31,7 @@ public class Utilisateur {
     private int nbExcellentBadges;
 
     // Constructeur
-    public Utilisateur(String nom, String email, String password, String mot_de_passe, String telephone) {
+    public Utilisateur(String nom, String email, String password, String telephone) {
 
         this.profile = new Profile(nom, email, password, telephone);
 
@@ -34,37 +41,70 @@ public class Utilisateur {
         this.rendement_journee = 0;
 
         this.taches_journalieres = new ArrayList<String>();
-        this.projets_en_cours = new ArrayList<String>();
-        // this.plannings = new ArrayList<Planning>();
+        this.projets_en_cours = new ArrayList<Projet>();
         this.categorie_taches = new ArrayList<String>();
         this.duree_travaillee = new HashMap<String, Integer>();
 
         this.nbGoodBadges = 0;
         this.nbVeryGoodBadges = 0;
         this.nbExcellentBadges = 0;
+
+        String username = nom.toLowerCase().replace(" ", "");
+        serializeProfile("./src/TimePlanner/UsersInformation/" + username + ".ser");
     }
 
     public Utilisateur() {
 
     }
 
-    // Getters et Setters
-    public String getPseudo() {
-        return profile.getNom();
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * SERIALIZATION
+     */
+    private void serializeProfile(String filepath) {
+        try {
+            FileOutputStream fileOut = new FileOutputStream(filepath);
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(this);
+            out.close();
+            fileOut.close();
+            System.out.println("Serialized profile object created for " + this.profile.getNom() + ".");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void setPseudo(String identifiant) {
-        this.profile.setNom(identifiant);
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * GETTERS AND SETTERS
+     */
+
+    public Profile getProfile() {
+        return profile;
     }
 
-    public String getPassword() {
-        return profile.getPassword();
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
 
-    public void setPassword(String mot_de_passe) {
-        this.profile.setPassword(mot_de_passe);
-
-    }
+    /*
+     * 
+     * 
+     * 
+     */
 
     public ArrayList<String> getBadge_gagnes() {
         return badge_gagnes;
@@ -73,6 +113,12 @@ public class Utilisateur {
     public void setBadge_gagnes(ArrayList<String> badge_gagnes) {
         this.badge_gagnes = badge_gagnes;
     }
+
+    /*
+    * 
+    * 
+    * 
+    */
 
     public int getSeuil_minimal() {
         return seuil_minimal;
@@ -86,6 +132,12 @@ public class Utilisateur {
         }
     }
 
+    /*
+    * 
+    * 
+    * 
+    */
+
     public int getDuree_maximale() {
         return duree_maximale;
     }
@@ -97,6 +149,12 @@ public class Utilisateur {
             System.out.println("Error: Duree maximale must be a positive integer.");
         }
     }
+
+    /*
+    * 
+    * 
+    * 
+    */
 
     public double getRendement_journee() {
         return rendement_journee;
@@ -110,6 +168,12 @@ public class Utilisateur {
         }
     }
 
+    /*
+    * 
+    * 
+    * 
+    */
+
     public ArrayList<String> getTaches_journalieres() {
         return taches_journalieres;
     }
@@ -118,23 +182,25 @@ public class Utilisateur {
         this.taches_journalieres = taches_journalieres;
     }
 
-    public ArrayList<String> getProjets_en_cours() {
+    /*
+    * 
+    * 
+    * 
+    */
+
+    public ArrayList<Projet> getProjets_en_cours() {
         return projets_en_cours;
     }
 
-    public void setProjets_en_cours(ArrayList<String> projets_en_cours) {
+    public void setProjets_en_cours(ArrayList<Projet> projets_en_cours) {
         this.projets_en_cours = projets_en_cours;
     }
 
     /*
-     * public ArrayList<Planning> getPlannings() {
-     * return plannings;
-     * }
-     * 
-     * public void setPlannings(ArrayList<Planning> plannings) {
-     * this.plannings = plannings;
-     * }
-     */
+    * 
+    * 
+    * 
+    */
 
     public ArrayList<String> getCategorie_taches() {
         return categorie_taches;
@@ -144,6 +210,12 @@ public class Utilisateur {
         this.categorie_taches = categorie_taches;
     }
 
+    /*
+    * 
+    * 
+    * 
+    */
+
     public HashMap<String, Integer> getDuree_travaillee() {
         return duree_travaillee;
     }
@@ -151,6 +223,12 @@ public class Utilisateur {
     public void setDuree_travaillee(HashMap<String, Integer> duree_travaillee) {
         this.duree_travaillee = duree_travaillee;
     }
+
+    /*
+    * 
+    * 
+    * 
+    */
 
     public int getNbGoodBadges() {
         return nbGoodBadges;
@@ -160,6 +238,12 @@ public class Utilisateur {
         this.nbGoodBadges = nbGoodBadges;
     }
 
+    /*
+    * 
+    * 
+    * 
+    */
+
     public int getNbVeryGoodBadges() {
         return nbVeryGoodBadges;
     }
@@ -168,6 +252,12 @@ public class Utilisateur {
         this.nbVeryGoodBadges = nbVeryGoodBadges;
     }
 
+    /*
+    * 
+    * 
+    * 
+    */
+
     public int getNbExcellentBadges() {
         return nbExcellentBadges;
     }
@@ -175,6 +265,12 @@ public class Utilisateur {
     public void setNbExcellentBadges(int nbExcellentBadges) {
         this.nbExcellentBadges = nbExcellentBadges;
     }
+
+    /*
+    * 
+    * 
+    * 
+    */
 
     public void ajouterBadge(String badge) {
         badge_gagnes.add(badge);
@@ -186,13 +282,8 @@ public class Utilisateur {
             nbExcellentBadges++;
         }
     }
-    /*
-     * public void afficherBadges() {
-     * System.out.println("Badges gagnés : ");
-     * for (String badge : badge_gagnes) {
-     * System.out.println("- " + badge);
-     * }
-     * }
-     */
 
+    public void ajouterProjet(Projet projet) {
+        this.projets_en_cours.add(projet);
+    }
 }

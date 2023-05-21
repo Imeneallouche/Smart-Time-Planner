@@ -1,10 +1,11 @@
 package TimePlanner.Backend.Models;
 
+import java.io.Serializable;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AutomaticPlanner {
+public class AutomaticPlanner implements Serializable {
 
     private List<Tache> taches;
     private List<Projet> projets;

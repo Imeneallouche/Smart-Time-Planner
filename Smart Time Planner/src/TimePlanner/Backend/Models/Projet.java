@@ -1,18 +1,18 @@
 package TimePlanner.Backend.Models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
-public class Projet {
+public class Projet implements Serializable {
     private String nom;
     private Periode period;
-    private List<Tache> taches;
+    private ArrayList<Tache> taches;
 
     public Projet(String nom, LocalDate dateDebut, LocalDate dateFinPrevues) {
         this.period = new Periode(dateDebut, dateFinPrevues);
         this.nom = nom;
-        this.taches = new ArrayList<>();
+        this.taches = new ArrayList<Tache>();
     }
 
     public String getNom() {
@@ -23,15 +23,15 @@ public class Projet {
         this.nom = nom;
     }
 
-    public Periode getDateDebut() {
+    public Periode getPeriode() {
         return period;
     }
 
-    public List<Tache> getTaches() {
+    public ArrayList<Tache> getTaches() {
         return taches;
     }
 
-    public void setTaches(List<Tache> taches) {
+    public void setTaches(ArrayList<Tache> taches) {
         this.taches = taches;
     }
 

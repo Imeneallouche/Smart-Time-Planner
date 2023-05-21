@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+   prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19"
+   xmlns:fx="http://javafx.com/fxml/1"
+   fx:controller="TimePlanner.Backend.Controllers.CreneauxLibresController">
+   <right>
+      <VBox prefHeight="600.0" prefWidth="498.0" styleClass="fourth-color"
+         BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="490.0">
+               <children>
+                  <Label text="Choisissez vos Créneaux libres" textFill="#242551">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="53.0" prefWidth="498.0">
+               <children>
+                  <Label fx:id="CurrentPeriodDay" prefHeight="26.0" prefWidth="328.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="71.0" prefWidth="498.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="83.0" prefWidth="100.0"
+                     style="-fx-background-color: #f0f0f0;">
+                     <HBox.margin>
+                        <Insets left="10.0" right="2.5" />
+                     </HBox.margin>
+                     <children>
+                        <Label text="HR">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="StarthourComboBox" onAction="#handleStartHourSelection"
+                           prefHeight="26.0" prefWidth="126.0" styleClass="input">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="110.0"
+                     style="-fx-background-color: #f0f0f0;">
+                     <HBox.margin>
+                        <Insets left="2.5" right="25.0" />
+                     </HBox.margin>
+                     <children>
+                        <Label text="MIN">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="StartMinuteComboBox" onAction="#handleStartMinuteSelection"
+                           prefHeight="26.0" prefWidth="126.0" styleClass="input">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="100.0"
+                     style="-fx-background-color: #f0f0f0;">
+                     <HBox.margin>
+                        <Insets left="25.0" right="2.5" />
+                     </HBox.margin>
+                     <children>
+                        <Label text="HR">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="EndHourComboBox" onAction="#handleEndHourSelection"
+                           prefHeight="26.0" prefWidth="126.0" styleClass="input">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="110.0" prefWidth="110.0"
+                     style="-fx-background-color: #f0f0f0;">
+                     <HBox.margin>
+                        <Insets left="2.5" right="10.0" />
+                     </HBox.margin>
+                     <children>
+                        <Label text="MIN">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="EndMinuteComboBox" onAction="#handleEndMinuteSelection"
+                           prefHeight="26.0" prefWidth="126.0" styleClass="input">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="286.0" prefWidth="498.0">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <VBox prefHeight="286.0" prefWidth="483.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="95.0" prefWidth="126.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label fx:id="creneau1first" textAlignment="CENTER">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="creneau1second" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="95.0" prefWidth="126.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label fx:id="creneau2first" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="creneau2second" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="95.0" prefWidth="126.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label fx:id="creneau3first" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="creneau3second" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="95.0" prefWidth="126.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label fx:id="creneau4first" textAlignment="CENTER">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="creneau4second" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="95.0" prefWidth="126.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label fx:id="creneau5first" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="creneau5second" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="95.0" prefWidth="126.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label fx:id="creneau6first" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="creneau6second">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="95.0" prefWidth="126.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label fx:id="creneau7first">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="creneau7second" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="95.0" prefWidth="126.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label fx:id="creneau8first" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="creneau8second" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="95.0" prefWidth="126.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label fx:id="creneau9first" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="creneau9second" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="AjouterCreneauButton" mnemonicParsing="false"
+                           onAction="handleAjouterCreneauController" styleClass="Ajouter-Bouton"
+                           text="Ajouter le créneau">
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <Label textFill="#b71d1d" fx:id="ErrorMessageAjouter" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="NextButton" mnemonicParsing="false"
+                           onAction="handleNextButton" styleClass="Schedule-Button" text="Next"
+                           textFill="#f4f4f4">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <Label />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+   <stylesheets>
+      <URL value="@../../values/styles.css" />
+      <URL value="@../PeriodChoice/PeriodChoice.css" />
+      <URL value="@CreneauxLibres.css" />
+   </stylesheets>
+   <center>
+      <VBox prefHeight="600.0" prefWidth="366.0" styleClass="third-color"
+         BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="106.0" prefWidth="394.0">
+               <children>
+                  <Label text="Step 02" textFill="#f7a579">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="116.0" prefWidth="394.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="116.0" prefWidth="443.0">
+                     <children>
+                        <Label text="We are not far from accomplishing the primary steps "
+                           textFill="#f4f4f4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Let's loop through each day of the schedule" textFill="#f4f4f4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="And specify for each one" textFill="#f4f4f4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="their free Creneaux" textFill="#f7a579">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="378.0" prefWidth="394.0">
+               <children>
+                  <ImageView fitHeight="290.0" fitWidth="340.0" pickOnBounds="true"
+                     preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/CreneauxLibres.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

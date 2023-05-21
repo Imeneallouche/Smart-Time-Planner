@@ -1,7 +1,13 @@
 package TimePlanner.Backend.Controllers;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
+
+import TimePlanner.Backend.Models.Projet;
+import TimePlanner.Backend.Models.Utilisateur;
+import TimePlanner.Backend.Services.DataManager;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +38,11 @@ public class PeriodChoiceController {
     @FXML
     private TextField projectName;
 
+    @FXML
+    private Label ProjectNameErrorMessage;
+
+    Utilisateur utilisateur = DataManager.getInstance().getUtilisateur();
+
     /*
      * 
      * 
@@ -43,6 +54,7 @@ public class PeriodChoiceController {
 
     @FXML
     private void CheckandSet() {
+
         LocalDate currentDate = LocalDate.now();
         LocalDate firstDate = firstday.getValue();
         LocalDate lastDate = lastday.getValue();
@@ -51,19 +63,28 @@ public class PeriodChoiceController {
         boolean FirstMessageconditions = firstDate != null && firstDate.isAfter(currentDate);
         boolean SecondMessageConditions = lastDate != null && lastDate.isAfter(firstDate);
         boolean ProjectNameConditions = project != null && project != "";
-        // boolean ProjectNameCondition =
+
         if (ProjectNameConditions) {
+
             // valid project name -> perform further actions
-            projectName.setVisible(false);
+            ProjectNameErrorMessage.setVisible(false);
 
             if (FirstMessageconditions) {
+
                 // Valid first day of schedule period, perform further actions
                 FirstErrorMessage.setVisible(false);
 
                 if (SecondMessageConditions) {
+
                     // Valid last day of schedule -> start action
                     SecondErrorMessage.setVisible(false);
-                    // here we will store the first and last date of the period
+
+                    // here we will store the in the project arraylist one project
+                    // We will store its: name, first & last date of period
+                    Projet Newproject = new Projet(project, firstDate, lastDate);
+                    utilisateur.ajouterProjet(Newproject);
+                    DataManager.getInstance().setUtilisateur(utilisateur);
+                    serializeUser(utilisateur);
                     /*
                      * 
                      * 
@@ -75,7 +96,8 @@ public class PeriodChoiceController {
                     // Load CreaneauLibres.fxml file
                     try {
                         Parent step2Root = FXMLLoader
-                                .load(getClass().getResource("../../Frontend/Pages/Profile/Profile.fxml"));
+                                .load(getClass()
+                                        .getResource("../../Frontend/Pages/CreneauxLibres/CreneauxLibres.fxml"));
 
                         // Get the current scene
                         Scene currentScene = ScheduleButton.getScene();
@@ -95,7 +117,36 @@ public class PeriodChoiceController {
             }
 
         } else {
-            projectName.setVisible(true);
+            ProjectNameErrorMessage.setVisible(true);
+        }
+    }
+
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * SERIALIZE USER AFTER MODIFICATION
+     */
+
+    private void serializeUser(Utilisateur utilisateur) {
+
+        String username = utilisateur.getProfile().getNom().toLowerCase().replaceAll(" ", "");
+
+        try {
+            FileOutputStream fileOut = new FileOutputStream("./src/TimePlanner/UsersInformation/" + username + ".ser",
+                    false);
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(utilisateur);
+            out.close();
+            fileOut.close();
+            System.out.println("Profile serialized successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -113,7 +164,7 @@ public class PeriodChoiceController {
 
         try {
             Parent step2Root = FXMLLoader
-                    .load(getClass().getResource("../../Frontend/Pages/Profile/Profile.fxml"));
+                    .load(getClass().getResource("../../Frontend/Pages/Login/Login.fxml"));
 
             // Get the current scene
             Scene currentScene = ScheduleButton.getScene();

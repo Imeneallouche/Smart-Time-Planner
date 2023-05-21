@@ -1,29 +1,30 @@
 package TimePlanner.Backend.Models;
 
-import java.time.LocalDateTime;
+import java.io.Serializable;
+import java.time.LocalTime;
 
-public class Creneau {
-    private LocalDateTime debut;
-    private LocalDateTime fin;
+public class Creneau implements Serializable {
+    private LocalTime debut;
+    private LocalTime fin;
 
-    public Creneau(LocalDateTime debut, LocalDateTime fin) {
+    public Creneau(LocalTime debut, LocalTime fin) {
         this.debut = debut;
         this.fin = fin;
     }
 
-    public LocalDateTime getDebut() {
+    public LocalTime getDebut() {
         return debut;
     }
 
-    public void setDebut(LocalDateTime debut) {
+    public void setDebut(LocalTime debut) {
         this.debut = debut;
     }
 
-    public LocalDateTime getFin() {
+    public LocalTime getFin() {
         return fin;
     }
 
-    public void setFin(LocalDateTime fin) {
+    public void setFin(LocalTime fin) {
         this.fin = fin;
     }
 

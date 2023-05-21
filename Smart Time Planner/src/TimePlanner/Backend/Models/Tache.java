@@ -1,8 +1,9 @@
 package TimePlanner.Backend.Models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Tache {
+public class Tache implements Serializable {
     private String titre;
     private String description;
     private int dureeTache;

@@ -14,8 +14,6 @@ public class Profile implements Serializable {
         this.password = password;
         this.telephone = telephone;
 
-        String username = nom.toLowerCase().replace(" ", "");
-        serializeProfile("./src/TimePlanner/UsersInformation/" + username + ".ser");
     }
 
     public Profile() {
@@ -137,16 +135,4 @@ public class Profile implements Serializable {
      * 
      */
 
-    private void serializeProfile(String filepath) {
-        try {
-            FileOutputStream fileOut = new FileOutputStream(filepath);
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(this);
-            out.close();
-            fileOut.close();
-            System.out.println("Serialized profile object created for " + this.nom + ".");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

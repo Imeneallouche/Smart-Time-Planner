@@ -96,8 +96,8 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="prejectName" maxWidth="180.0" minWidth="-Infinity" prefHeight="26.0" prefWidth="354.0" styleClass="input" />
-                        <Label text="There should be a Project name" textFill="#b71d1d" fx:id="projectName"/>
+                        <TextField fx:id="projectName" maxWidth="180.0" minWidth="-Infinity" prefHeight="26.0" prefWidth="354.0" styleClass="input"/>
+                        <Label text="There should be a Project name" textFill="#b71d1d" fx:id= "ProjectNameErrorMessage"/>
                      </children>
                   </VBox>
                </children>

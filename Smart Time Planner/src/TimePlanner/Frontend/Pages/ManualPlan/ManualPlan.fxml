@@ -5,7 +5,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -64,8 +63,7 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label text="Plan manuel" textFill="#f4f4f4"
-                           onMouseClicked="#handleRouting">
+                        <Label onMouseClicked="#handleRouting" text="Plan manuel" textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -94,8 +92,8 @@
                               <Image url="@../../assets/SideBar/Chart.png" />
                            </image>
                         </ImageView>
-                        <Label text="Plan automatique" textFill="#f4f4f4"
-                           onMouseClicked="#handleRouting">
+                        <Label onMouseClicked="#handleRouting" text="Plan automatique"
+                           textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -117,7 +115,7 @@
                               <Image url="@../../assets/SideBar/Chat.png" />
                            </image>
                         </ImageView>
-                        <Label text="Historique" textFill="#f4f4f4" onMouseClicked="#handleRouting">
+                        <Label onMouseClicked="#handleRouting" text="Historique" textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -139,8 +137,8 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label text="Calendrier actuel" textFill="#f4f4f4"
-                           onMouseClicked="#handleRouting">
+                        <Label onMouseClicked="#handleRouting" text="Calendrier actuel"
+                           textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -165,8 +163,8 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label text="Votre profile" textFill="#f4f4f4"
-                           onMouseClicked="#handleRouting">
+                        <Label onMouseClicked="#handleRouting" text="Votre profile"
+                           textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -191,8 +189,8 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label text="Se déconnecter" textFill="#f4f4f4"
-                           onMouseClicked="#handleRouting">
+                        <Label onMouseClicked="#handleRouting" text="Se déconnecter"
+                           textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -208,10 +206,9 @@
       </VBox>
    </left>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="secondary-color"
-         BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0">
+            <VBox alignment="TOP_CENTER" prefHeight="445.0" prefWidth="665.0" spacing="25.0">
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0">
                      <children>
@@ -221,7 +218,7 @@
                               <Image url="@../../assets/Add/add.png" />
                            </image>
                         </ImageView>
-                        <Label text="Plannifiez votre tache" textFill="#f4f4f4">
+                        <Label text="Plannifiez vos taches manuellement" textFill="#00002c">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -234,112 +231,136 @@
                         <Insets />
                      </opaqueInsets>
                      <padding>
-                        <Insets left="20.0" />
+                        <Insets bottom="10.0" left="20.0" top="10.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
+                  <VBox prefHeight="335.0" prefWidth="665.0">
+                     <padding>
+                        <Insets left="40.0" right="40.0" />
+                     </padding>
                      <children>
-                        <Label prefWidth="200.0" text="Nom de la tache" textFill="#f4f4f4">
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
+                        <Label text="Ce qu'on assure au niveau de cette fonctionalité">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
                         </Label>
-                        <TextField prefHeight="26.0" prefWidth="342.0" styleClass="profile-input" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="585.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true"
+                                       preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../assets/CheckSign.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="427.0">
+                                 <children>
+                                    <Label
+                                       text="Introduire le nom, la description et la priorité de votre tache" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label styleClass="statut-accomplishement" text="Assurée">
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="585.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true"
+                                       preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../assets/CheckSign.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="427.0">
+                                 <children>
+                                    <Label
+                                       text="Planifier votre tache : le jour , date de début et date de fin" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label styleClass="statut-accomplishement" text="Assurée">
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="585.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true"
+                                       preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../assets/CheckSign.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="427.0">
+                                 <children>
+                                    <Label
+                                       text="Traitement différent de type de votre tache: simple ou complexe " />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label styleClass="statut-accomplishement" text="Assurée">
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="585.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true"
+                                       preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../assets/CheckSign.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="427.0">
+                                 <children>
+                                    <Label text="Insertion de votre tache dans le calendrier" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label styleClass="statut-accomplishement" text="Assurée">
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
                      </children>
-                     <VBox.margin>
-                        <Insets left="50.0" />
-                     </VBox.margin>
-                  </HBox>
-
-                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label prefWidth="200.0" text="Description" textFill="#f4f4f4">
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField prefHeight="26.0" prefWidth="342.0" styleClass="profile-input" />
-                     </children>
-                     <VBox.margin>
-                        <Insets left="50.0" />
-                     </VBox.margin>
-                  </HBox>
-
-                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label prefWidth="200.0" text="Durée de la tache" textFill="#f4f4f4">
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField prefHeight="26.0" prefWidth="342.0" styleClass="profile-input" />
-                     </children>
-                     <VBox.margin>
-                        <Insets left="50.0" />
-                     </VBox.margin>
-                  </HBox>
-
-
-                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label prefWidth="200.0" text="Nom de la tache" textFill="#f4f4f4">
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField prefHeight="26.0" prefWidth="342.0" styleClass="profile-input" />
-                     </children>
-                     <VBox.margin>
-                        <Insets left="50.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label prefWidth="200.0" text="Nom de la tache" textFill="#f4f4f4">
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField prefHeight="26.0" prefWidth="342.0" styleClass="profile-input" />
-                     </children>
-                     <VBox.margin>
-                        <Insets left="50.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label prefWidth="200.0" text="Nom de la tache" textFill="#f4f4f4">
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField prefHeight="26.0" prefWidth="342.0" styleClass="profile-input" />
-                     </children>
-                     <VBox.margin>
-                        <Insets left="50.0" />
-                     </VBox.margin>
-                  </HBox>
-
-
-                  <HBox prefHeight="100.0" prefWidth="200.0" />
+                  </VBox>
 
                </children>
             </VBox>
@@ -347,7 +368,8 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="211.0" prefWidth="199.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Check Calandar" fx:id="CheckCalendar">
+                        <Button fx:id="CheckCalendar" mnemonicParsing="false" styleClass="button3"
+                           text="Check Calandar" onAction="#handleCheckCalendar">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </padding>
@@ -356,7 +378,8 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="211.0" prefWidth="199.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Planifier la tache" fx:id="PlanTask">
+                        <Button fx:id="PlanTask" mnemonicParsing="false" styleClass="button3"
+                           text="Planifier la tache" onAction="#handlePlanTask">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </padding>
@@ -381,5 +404,6 @@
    <stylesheets>
       <URL value="@../../values/styles.css" />
       <URL value="@ManualPlan.css" />
+      <URL value="@../Calendar/TaskCalendar.css" />
    </stylesheets>
 </BorderPane>

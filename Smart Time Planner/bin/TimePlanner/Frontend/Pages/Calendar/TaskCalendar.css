@@ -30,3 +30,8 @@
   -fx-border-insets: -5;
   -fx-border-color: linear-gradient(to top left, #35acf1, #f6b46f);
 }
+
+.statut-accomplishement {
+  -fx-background-color: #35acf1;
+  -fx-background-radius: 30;
+}

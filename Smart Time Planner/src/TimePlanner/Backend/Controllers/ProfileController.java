@@ -1,8 +1,14 @@
 package TimePlanner.Backend.Controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -128,8 +134,77 @@ public class ProfileController implements Initializable {
      * 
      * 
      * 
+     * 
+     * 
+     * HANDLE THE ROUTINGS TO DIFFERENT PAGES
      */
+    @FXML
+    private void handleRouting(MouseEvent event) {
+        Label label = (Label) event.getSource();
+        String labelText = label.getText();
 
+        String PageRouter;
+        boolean newPage = false;
+
+        switch (labelText) {
+            case "Plan manuel":
+                PageRouter = "ManualPlan/ManualPlan.fxml";
+                break;
+
+            case "Plan automatique":
+                PageRouter = "AutomaticPlan/AutomaticPlan.fxml";
+                break;
+
+            case "Historique":
+                PageRouter = "Historique/Historique.fxml";
+                break;
+
+            case "Votre profile":
+                PageRouter = "Profile/Profile.fxml";
+                break;
+
+            case "Calendrier actuel":
+                newPage = true;
+                PageRouter = "Calendar/TaskCalendar";
+                break;
+
+            case "Se déconnecter":
+                PageRouter = "Login/Login.fxml";
+                break;
+
+            default:
+                PageRouter = "Profile/Profile.fxml";
+                break;
+        }
+
+        if (!newPage) {
+            try {
+                Parent next = FXMLLoader.load(getClass().getResource("../../Frontend/Pages/" + PageRouter));
+
+                // Get the current scene
+                Scene currentScene = nomField.getScene();
+
+                // Set the root of the current scene to the Step2 root
+                currentScene.setRoot(next);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        else {
+            // WE WILL LOAD RTHE OTHER PAGES IN A NEW PAGE
+        }
+    }
+
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     */
     /*
      * private Profile deserializeProfile(String username) {
      * try {

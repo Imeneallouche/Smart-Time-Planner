@@ -14,16 +14,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.ProfileController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+   prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19"
+   xmlns:fx="http://javafx.com/fxml/1"
+   fx:controller="TimePlanner.Backend.Controllers.ProfileController">
    <left>
-      <VBox prefHeight="600.0" prefWidth="235.0" styleClass="primary-color" BorderPane.alignment="CENTER">
+      <VBox prefHeight="600.0" prefWidth="235.0" styleClass="primary-color"
+         BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
                <children>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true"
+                     preserveRatio="true">
                      <image>
                         <Image url="@../../assets/avatars/F0.png" />
                      </image>
@@ -36,7 +41,8 @@
                         <Insets top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" style="-fx-background-radius: 30;" styleClass="third-color" text="Edit profile" textFill="WHITE">
+                  <Button mnemonicParsing="false" style="-fx-background-radius: 30;"
+                     styleClass="third-color" text="Edit profile" textFill="WHITE">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -48,9 +54,11 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="502.0" prefWidth="235.0" spacing="10.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="215.0" styleClass="selected">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="215.0"
+                     styleClass="selected">
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <image>
                               <Image url="@../../assets/SideBar/Folder.png" />
                            </image>
@@ -58,7 +66,8 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label text=" Plan manuel" textFill="#f4f4f4">
+                        <Label text="Plan manuel" textFill="#f4f4f4"
+                           onMouseClicked="#handleRouting">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -68,12 +77,14 @@
                         <Insets left="20.0" right="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0"
+                     styleClass="selected">
                      <VBox.margin>
                         <Insets left="20.0" right="10.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
@@ -81,19 +92,22 @@
                               <Image url="@../../assets/SideBar/Chart.png" />
                            </image>
                         </ImageView>
-                        <Label text="Plan automatique" textFill="#f4f4f4">
+                        <Label text="Plan automatique" textFill="#f4f4f4"
+                           onMouseClicked="#handleRouting">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0"
+                     styleClass="selected">
                      <VBox.margin>
                         <Insets left="20.0" right="10.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
@@ -101,19 +115,21 @@
                               <Image url="@../../assets/SideBar/Chat.png" />
                            </image>
                         </ImageView>
-                        <Label text="Historique" textFill="#f4f4f4">
+                        <Label text="Historique" textFill="#f4f4f4" onMouseClicked="#handleRouting">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0"
+                     styleClass="selected">
                      <VBox.margin>
                         <Insets left="20.0" right="10.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <image>
                               <Image url="@../../assets/SideBar/Calendar.png" />
                            </image>
@@ -121,7 +137,8 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label text="Calendrier actuel" textFill="#f4f4f4">
+                        <Label text="Calendrier actuel" textFill="#f4f4f4"
+                           onMouseClicked="#handleRouting">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -136,7 +153,8 @@
                         <Insets left="20.0" right="10.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <image>
                               <Image url="@../../assets/SideBar/Encadrant.png" />
                            </image>
@@ -144,7 +162,8 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label text="Votre profile" textFill="#f4f4f4">
+                        <Label text="Votre profile" textFill="#f4f4f4"
+                           onMouseClicked="#handleRouting">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -155,7 +174,8 @@
                         <String fx:value="selected-border" />
                      </styleClass>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0"
+                     styleClass="selected">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -163,7 +183,8 @@
                         <Insets left="20.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <image>
                               <Image url="@../../assets/SideBar/logout.png" />
                            </image>
@@ -171,7 +192,8 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label text="Se déconnecter" textFill="#f4f4f4">
+                        <Label text="Se déconnecter" textFill="#f4f4f4"
+                           onMouseClicked="#handleRouting">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -187,9 +209,11 @@
       </VBox>
    </left>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="secondary-color" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="secondary-color"
+         BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="18.0" prefWidth="683.0" text="Paramètre du profile" textFill="#f4f4f4">
+            <Label prefHeight="18.0" prefWidth="683.0" text="Paramètre du profile"
+               textFill="#f4f4f4">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -221,7 +245,8 @@
                               <Insets right="80.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" fx:id= "nomField"/>
+                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input"
+                           fx:id="nomField" />
                      </children>
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" />
@@ -235,7 +260,8 @@
                               <Insets right="80.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" fx:id= "emailField"/>
+                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input"
+                           fx:id="emailField" />
                      </children>
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" />
@@ -249,15 +275,16 @@
                               <Insets right="80.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" fx:id= "passwordField"/>
+                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input"
+                           fx:id="passwordField" />
                      </children>
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" />
                      </VBox.margin>
                   </HBox>
 
-                  
-                <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
+
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" top="30.0" />
                      </VBox.margin>
@@ -276,7 +303,8 @@
                               <Insets right="80.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input" fx:id="telephoneField"/>
+                        <TextField prefHeight="26.0" prefWidth="348.0" styleClass="profile-input"
+                           fx:id="telephoneField" />
                      </children>
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" />
@@ -288,7 +316,9 @@
                         <Insets left="50.0" right="10.0" top="20.0" />
                      </VBox.margin>
                      <children>
-                        <Button mnemonicParsing="false" style="-fx-background-radius: 30;" styleClass="third-color" text="Save profile" textFill="WHITE" onAction="#saveChanges">
+                        <Button mnemonicParsing="false" style="-fx-background-radius: 30;"
+                           styleClass="third-color" text="Save profile" textFill="WHITE"
+                           onAction="#saveChanges">
                            <padding>
                               <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                            </padding>
@@ -300,7 +330,8 @@
                   </HBox>
                </children>
             </VBox>
-         </children></VBox>
+         </children>
+      </VBox>
    </center>
    <stylesheets>
       <URL value="@../../values/styles.css" />

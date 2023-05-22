@@ -6,8 +6,10 @@ import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import TimePlanner.Backend.Models.Creneau;
@@ -95,7 +97,7 @@ public class CreneauxLibresController implements Initializable {
     private Button AjouterCreneauButton;
 
     @FXML
-    private Button nexButton;
+    private Button nextButton;
 
     @FXML
     private Label ErrorMessageAjouter;
@@ -129,7 +131,13 @@ public class CreneauxLibresController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         initializeHourComboBox();
         initializeMinuteComboBox();
-        CurrentPeriodDay.setText(currentDay.toString());
+
+        // Format the date into the desired output format
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("EEEE, d MMMM yyyy", Locale.ENGLISH);
+        String formattedDate = currentDay.format(outputFormatter);
+
+        // SET THE CURRENTDATE TO THE FRONT
+        CurrentPeriodDay.setText(formattedDate);
     }
 
     private void initializeHourComboBox() {
@@ -178,6 +186,10 @@ public class CreneauxLibresController implements Initializable {
         boolean conditiond = LastMinute != null && LastMinute != "";
 
         if (conditiona && conditionb && conditionc && conditiond) {
+
+            // REMOVE MISSING VALUES ERROR
+            ErrorMessageAjouter.setText(null);
+
             // ADD LE CRENEAU TO THE FRONT AND BACK
             // FIRST : THE FRONTEND
             nbcreneaux++;
@@ -260,6 +272,9 @@ public class CreneauxLibresController implements Initializable {
     @FXML
     private void handleNextButton() {
 
+        // LET THE NBCRENEAU COME BACK TO 0 AGAIN
+        nbcreneaux = 0;
+
         // PUTH LES CRENEAU LIBRES OF THE DAY
         creneaux.add(creneaujour);
 
@@ -267,12 +282,16 @@ public class CreneauxLibresController implements Initializable {
         creneaujour.clear();
 
         // AS LONG AS WE DDIN'T COME TO THE END OF OUR PERIOD
-        if (!currentDay.isAfter(endday)) {
+        if (currentDay.isBefore(endday.plusDays(1))) {
             // Move to the next day
             currentDay = currentDay.plus(1, ChronoUnit.DAYS);
 
-            // CHANGE THE FRONT : THE CURRENT DATE WILL BE INCREMENTED
-            CurrentPeriodDay.setText(currentDay.toString());
+            // Format the date into the desired output format
+            DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("EEEE, d MMMM yyyy", Locale.ENGLISH);
+            String formattedDate = currentDay.format(outputFormatter);
+
+            // SET THE CURRENTDATE TO THE FRONT
+            CurrentPeriodDay.setText(formattedDate);
 
             // REMOVE ALL LES CRENEAUX FROM THE FRONT
             creneau1first.setText(null);
@@ -316,7 +335,7 @@ public class CreneauxLibresController implements Initializable {
                 Parent next = FXMLLoader.load(getClass().getResource(nextPage));
 
                 // Get the current scene
-                Scene currentScene = nexButton.getScene();
+                Scene currentScene = nextButton.getScene();
 
                 // Set the root of the current scene to the Step2 root
                 currentScene.setRoot(next);

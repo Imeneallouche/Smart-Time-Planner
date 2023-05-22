@@ -12,4 +12,5 @@
 
 .selected:hover {
   -fx-background-color: #3c3d58;
+  cursor: hand;
 }

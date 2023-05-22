@@ -12,12 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-   prefHeight="740.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/19"
-   xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <VBox prefHeight="740.0" prefWidth="462.0" style="-fx-background-radius: 0 30 30 0;"
-         styleClass="fifth-color" BorderPane.alignment="CENTER">
+      <VBox prefHeight="740.0" prefWidth="409.0" style="-fx-background-radius: 0 30 30 0;" styleClass="fifth-color" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="79.0" prefWidth="430.0">
                <children>
@@ -40,8 +37,7 @@
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="18.0" prefWidth="282.0"
-                           text="Welcome to your task manager calendar" textFill="#d0d0d0" />
+                        <Label prefHeight="18.0" prefWidth="282.0" text="Welcome to your task manager calendar" textFill="#d0d0d0" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -261,8 +257,7 @@
             </HBox>
             <HBox prefHeight="176.0" prefWidth="430.0">
                <children>
-                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true"
-                     preserveRatio="true">
+                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/TaskCalendar.png" />
                      </image>
@@ -277,6 +272,116 @@
       <URL value="@TaskCalendar.css" />
    </stylesheets>
    <right>
-      <VBox prefHeight="740.0" prefWidth="607.0" BorderPane.alignment="CENTER" />
+      <VBox alignment="TOP_CENTER" prefHeight="740.0" prefWidth="607.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Tuesday 2nd 2023" textFill="#111111">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="let's see what you got to accomplish for this day" />
+            <HBox prefHeight="50.0" prefWidth="526.0">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <children>
+                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/CheckSign.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="249.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="222.0" text="Here is one of the tasks that have " />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
+                     <children>
+                        <Label text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
+                     <children>
+                        <Label styleClass="statut-accomplishement" text="accomplished">
+                           <padding>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="526.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/CheckSign.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="249.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="222.0" text="Here is one of the tasks that have " />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
+                     <children>
+                        <Label text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
+                     <children>
+                        <Label styleClass="statut-accomplishement" text="accomplished">
+                           <padding>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="526.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/CheckSign.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="249.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="222.0" text="Here is one of the tasks that have " />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
+                     <children>
+                        <Label text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
+                     <children>
+                        <Label styleClass="statut-accomplishement" text="accomplished">
+                           <padding>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="10.0" right="10.0" top="30.0" />
+         </BorderPane.margin></VBox>
    </right>
 </BorderPane>

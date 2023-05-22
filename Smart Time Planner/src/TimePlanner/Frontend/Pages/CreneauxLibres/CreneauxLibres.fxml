@@ -31,7 +31,8 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="53.0" prefWidth="498.0">
                <children>
-                  <Label fx:id="CurrentPeriodDay" prefHeight="26.0" prefWidth="328.0">
+                  <Label fx:id="CurrentPeriodDay" alignment="CENTER" prefHeight="26.0"
+                     prefWidth="328.0" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -51,8 +52,8 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="StarthourComboBox" onAction="#handleStartHourSelection"
-                           prefHeight="26.0" prefWidth="126.0" styleClass="input">
+                        <ComboBox fx:id="StarthourComboBox" prefHeight="26.0" prefWidth="126.0"
+                           styleClass="input">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -73,8 +74,8 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="StartMinuteComboBox" onAction="#handleStartMinuteSelection"
-                           prefHeight="26.0" prefWidth="126.0" styleClass="input">
+                        <ComboBox fx:id="StartMinuteComboBox" prefHeight="26.0" prefWidth="126.0"
+                           styleClass="input">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -95,8 +96,8 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="EndHourComboBox" onAction="#handleEndHourSelection"
-                           prefHeight="26.0" prefWidth="126.0" styleClass="input">
+                        <ComboBox fx:id="EndHourComboBox" prefHeight="26.0" prefWidth="126.0"
+                           styleClass="input">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -117,8 +118,8 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="EndMinuteComboBox" onAction="#handleEndMinuteSelection"
-                           prefHeight="26.0" prefWidth="126.0" styleClass="input">
+                        <ComboBox fx:id="EndMinuteComboBox" prefHeight="26.0" prefWidth="126.0"
+                           styleClass="input">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -338,19 +339,19 @@
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Button fx:id="AjouterCreneauButton" mnemonicParsing="false"
-                           onAction="handleAjouterCreneauController" styleClass="Ajouter-Bouton"
+                           onAction="#handleAjouterCreneauController" styleClass="Ajouter-Bouton"
                            text="Ajouter le créneau">
                            <padding>
                               <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                            </padding>
                         </Button>
-                        <Label textFill="#b71d1d" fx:id="ErrorMessageAjouter" />
+                        <Label fx:id="ErrorMessageAjouter" textFill="#b71d1d" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="NextButton" mnemonicParsing="false"
-                           onAction="handleNextButton" styleClass="Schedule-Button" text="Next"
+                        <Button fx:id="nextButton" mnemonicParsing="false"
+                           onAction="#handleNextButton" styleClass="Schedule-Button" text="Next"
                            textFill="#f4f4f4">
                            <VBox.margin>
                               <Insets />

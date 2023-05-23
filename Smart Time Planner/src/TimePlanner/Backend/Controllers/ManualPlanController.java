@@ -52,6 +52,10 @@ public class ManualPlanController {
                 PageRouter = "Historique/Historique.fxml";
                 break;
 
+            case "Projets":
+                PageRouter = "Projets/Projets.fxml";
+                break;
+
             case "Votre profile":
                 PageRouter = "Profile/Profile.fxml";
                 break;

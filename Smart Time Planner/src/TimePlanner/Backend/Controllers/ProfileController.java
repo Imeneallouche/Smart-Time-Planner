@@ -168,6 +168,10 @@ public class ProfileController implements Initializable {
                 PageRouter = "Calendar/TaskCalendar.fxml";
                 break;
 
+            case "Projets":
+                PageRouter = "Projets/Projets.fxml";
+                break;
+
             case "Se déconnecter":
                 PageRouter = "Login/Login.fxml";
                 break;

@@ -56,6 +56,10 @@ public class AutomaticPlanController {
                 PageRouter = "Profile/Profile.fxml";
                 break;
 
+            case "Projets":
+                PageRouter = "Projets/Projets.fxml";
+                break;
+
             case "Calendrier actuel":
                 newPage = true;
                 PageRouter = "Calendar/TaskCalendar.fxml";

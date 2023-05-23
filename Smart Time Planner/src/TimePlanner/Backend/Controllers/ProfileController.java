@@ -165,7 +165,7 @@ public class ProfileController implements Initializable {
 
             case "Calendrier actuel":
                 newPage = true;
-                PageRouter = "Calendar/TaskCalendar";
+                PageRouter = "Calendar/TaskCalendar.fxml";
                 break;
 
             case "Se déconnecter":

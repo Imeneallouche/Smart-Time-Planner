@@ -12,16 +12,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.ManualPlanController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+   prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19"
+   xmlns:fx="http://javafx.com/fxml/1"
+   fx:controller="TimePlanner.Backend.Controllers.AutomaticPlanController">
    <left>
-      <VBox prefHeight="600.0" prefWidth="235.0" styleClass="primary-color" BorderPane.alignment="CENTER">
+      <VBox prefHeight="600.0" prefWidth="235.0" styleClass="primary-color"
+         BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
                <children>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true"
+                     preserveRatio="true">
                      <image>
                         <Image url="@../../assets/avatars/F0.png" />
                      </image>
@@ -34,7 +39,8 @@
                         <Insets top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" style="-fx-background-radius: 30;" styleClass="third-color" text="Edit profile" textFill="WHITE">
+                  <Button mnemonicParsing="false" style="-fx-background-radius: 30;"
+                     styleClass="third-color" text="Edit profile" textFill="WHITE">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -46,9 +52,11 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="502.0" prefWidth="235.0" spacing="10.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="215.0" styleClass="selected">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="215.0"
+                     styleClass="selected">
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <image>
                               <Image url="@../../assets/SideBar/Folder.png" />
                            </image>
@@ -71,7 +79,8 @@
                         <Insets left="20.0" right="10.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
@@ -79,7 +88,8 @@
                               <Image url="@../../assets/SideBar/Chart.png" />
                            </image>
                         </ImageView>
-                        <Label onMouseClicked="#handleRouting" text="Plan automatique" textFill="#f4f4f4">
+                        <Label onMouseClicked="#handleRouting" text="Plan automatique"
+                           textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -90,12 +100,14 @@
                         <String fx:value="selected-border" />
                      </styleClass>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0"
+                     styleClass="selected">
                      <VBox.margin>
                         <Insets left="20.0" right="10.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
@@ -110,12 +122,14 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0"
+                     styleClass="selected">
                      <VBox.margin>
                         <Insets left="20.0" right="10.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <image>
                               <Image url="@../../assets/SideBar/Calendar.png" />
                            </image>
@@ -123,14 +137,16 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label onMouseClicked="#handleRouting" text="Calendrier actuel" textFill="#f4f4f4">
+                        <Label onMouseClicked="#handleRouting" text="Calendrier actuel"
+                           textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0"
+                     styleClass="selected">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -138,7 +154,8 @@
                         <Insets left="20.0" right="10.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <image>
                               <Image url="@../../assets/SideBar/Encadrant.png" />
                            </image>
@@ -146,14 +163,16 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label onMouseClicked="#handleRouting" text="Votre profile" textFill="#f4f4f4">
+                        <Label onMouseClicked="#handleRouting" text="Votre profile"
+                           textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0"
+                     styleClass="selected">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -161,7 +180,8 @@
                         <Insets left="20.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <image>
                               <Image url="@../../assets/SideBar/logout.png" />
                            </image>
@@ -169,7 +189,8 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label onMouseClicked="#handleRouting" text="Se déconnecter" textFill="#f4f4f4">
+                        <Label onMouseClicked="#handleRouting" text="Se déconnecter"
+                           textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -191,7 +212,8 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <image>
                               <Image url="@../../assets/Add/add.png" />
                            </image>
@@ -226,7 +248,8 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
                                  <children>
-                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true"
+                                       preserveRatio="true">
                                        <image>
                                           <Image url="@../../assets/CheckSign.png" />
                                        </image>
@@ -253,7 +276,8 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
                                  <children>
-                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true"
+                                       preserveRatio="true">
                                        <image>
                                           <Image url="@../../assets/CheckSign.png" />
                                        </image>
@@ -262,7 +286,8 @@
                               </VBox>
                               <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="427.0">
                                  <children>
-                                    <Label text="Introduire une priorité et deadline souhaités de votre tache" />
+                                    <Label
+                                       text="Introduire une priorité et deadline souhaités de votre tache" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -280,7 +305,8 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
                                  <children>
-                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true"
+                                       preserveRatio="true">
                                        <image>
                                           <Image url="@../../assets/CheckSign.png" />
                                        </image>
@@ -307,7 +333,8 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
                                  <children>
-                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true"
+                                       preserveRatio="true">
                                        <image>
                                           <Image url="@../../assets/CheckSign.png" />
                                        </image>
@@ -339,7 +366,9 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="211.0" prefWidth="199.0">
                      <children>
-                        <Button fx:id="CheckCalendar" mnemonicParsing="false" onAction="#handleCheckCalendar" styleClass="button3" text="Check Calandar">
+                        <Button fx:id="CheckCalendar" mnemonicParsing="false"
+                           onAction="#handleCheckCalendar" styleClass="button3"
+                           text="Check Calandar">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </padding>
@@ -348,7 +377,8 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="211.0" prefWidth="199.0">
                      <children>
-                        <Button fx:id="PlanTask" mnemonicParsing="false" onAction="#handlePlanTask" styleClass="button3" text="Specifier une taches">
+                        <Button fx:id="PlanTask" mnemonicParsing="false" onAction="#handlePlanTask"
+                           styleClass="button3" text="Specifier une taches">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </padding>
@@ -357,7 +387,8 @@
                   </VBox>
                   <VBox prefHeight="198.0" prefWidth="210.0">
                      <children>
-                        <ImageView fitHeight="170.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="170.0" fitWidth="170.0" pickOnBounds="true"
+                           preserveRatio="true">
                            <image>
                               <Image url="@../../assets/planifierTache.png" />
                            </image>
@@ -371,7 +402,7 @@
    </center>
    <stylesheets>
       <URL value="@../../values/styles.css" />
-      <URL value="@ManualPlan.css" />
+      <URL value="@../ManualPlan/ManualPlan.css" />
       <URL value="@../Calendar/TaskCalendar.css" />
    </stylesheets>
 </BorderPane>

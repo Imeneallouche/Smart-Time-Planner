@@ -58,7 +58,7 @@ public class ManualPlanController {
 
             case "Calendrier actuel":
                 newPage = true;
-                PageRouter = "Calendar/TaskCalendar";
+                PageRouter = "Calendar/TaskCalendar.fxml";
                 break;
 
             case "Se déconnecter":
@@ -100,8 +100,8 @@ public class ManualPlanController {
                 Scene newScene = new Scene(nextPage);
 
                 // Set the width and height of the new stage
-                double stageWidth = 800; // Specify the desired width
-                double stageHeight = 600; // Specify the desired height
+                double stageWidth = 1028; // Specify the desired width
+                double stageHeight = 740; // Specify the desired height
 
                 newStage.setWidth(stageWidth);
                 newStage.setHeight(stageHeight);

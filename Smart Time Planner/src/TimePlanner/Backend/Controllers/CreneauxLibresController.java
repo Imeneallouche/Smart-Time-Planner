@@ -108,8 +108,10 @@ public class CreneauxLibresController implements Initializable {
 
     Utilisateur utilisateur = DataManager.getInstance().getUtilisateur();
 
-    LocalDate firstday = utilisateur.getProjets_en_cours().get(0).getPeriode().getStartDate();
-    LocalDate endday = utilisateur.getProjets_en_cours().get(0).getPeriode().getEndDate();
+    int index = 0;
+
+    LocalDate firstday = utilisateur.getProjets_en_cours().get(index).getPeriode().getStartDate();
+    LocalDate endday = utilisateur.getProjets_en_cours().get(index).getPeriode().getEndDate();
     LocalDate currentDay = firstday;
 
     ArrayList<ArrayList<Creneau>> creneaux = new ArrayList<>();
@@ -245,7 +247,7 @@ public class CreneauxLibresController implements Initializable {
 
             // NOW TO THE BACKEND
             LocalTime debut = LocalTime.of(Integer.parseInt(FirstHour), Integer.parseInt(FirstMinute));
-            LocalTime fin = LocalTime.of(Integer.parseInt(FirstHour), Integer.parseInt(FirstMinute));
+            LocalTime fin = LocalTime.of(Integer.parseInt(LastHour), Integer.parseInt(LastMinute));
 
             Creneau creneau = new Creneau(debut, fin);
 
@@ -275,14 +277,17 @@ public class CreneauxLibresController implements Initializable {
         // LET THE NBCRENEAU COME BACK TO 0 AGAIN
         nbcreneaux = 0;
 
-        // PUTH LES CRENEAU LIBRES OF THE DAY
-        creneaux.add(creneaujour);
+        // Create a new instance of creneaujour
+        ArrayList<Creneau> newCreneauJour = new ArrayList<>(creneaujour);
+
+        // Add the newCreneauJour to creneaux
+        creneaux.add(newCreneauJour);
 
         // EMPTY THE ARRAYLIST OF LES CRENEAU DU JOURS
         creneaujour.clear();
 
         // AS LONG AS WE DDIN'T COME TO THE END OF OUR PERIOD
-        if (currentDay.isBefore(endday.plusDays(1))) {
+        if (currentDay.isBefore(endday)) {
             // Move to the next day
             currentDay = currentDay.plus(1, ChronoUnit.DAYS);
 
@@ -320,7 +325,7 @@ public class CreneauxLibresController implements Initializable {
         else {
 
             // 1- SAVE ALL LES CRENEAUX IN THE USER
-            utilisateur.getProjets_en_cours().get(0).getPeriode().setCreneaux(creneaux);
+            utilisateur.getProjets_en_cours().get(index).getPeriode().setCreneaux(creneaux);
 
             // 2- SAVE IT IN THE DATAMANAGER AS WELL
             DataManager.getInstance().setUtilisateur(utilisateur);

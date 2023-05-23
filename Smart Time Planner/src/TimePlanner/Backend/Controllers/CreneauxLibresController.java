@@ -292,33 +292,10 @@ public class CreneauxLibresController implements Initializable {
             currentDay = currentDay.plus(1, ChronoUnit.DAYS);
 
             // Format the date into the desired output format
-            DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("EEEE, d MMMM yyyy", Locale.ENGLISH);
-            String formattedDate = currentDay.format(outputFormatter);
-
-            // SET THE CURRENTDATE TO THE FRONT
-            CurrentPeriodDay.setText(formattedDate);
+            SetLabelDate(currentDay);
 
             // REMOVE ALL LES CRENEAUX FROM THE FRONT
-            creneau1first.setText(null);
-            creneau2first.setText(null);
-            creneau3first.setText(null);
-            creneau4first.setText(null);
-            creneau5first.setText(null);
-            creneau6first.setText(null);
-            creneau7first.setText(null);
-            creneau8first.setText(null);
-            creneau9first.setText(null);
-
-            creneau1second.setText(null);
-            creneau2second.setText(null);
-            creneau3second.setText(null);
-            creneau4second.setText(null);
-            creneau5second.setText(null);
-            creneau6second.setText(null);
-            creneau7second.setText(null);
-            creneau8second.setText(null);
-            creneau9second.setText(null);
-
+            EraseAll();
         }
 
         // ELSE IF WE CAME TO THE END OF THE PERIOD
@@ -374,6 +351,60 @@ public class CreneauxLibresController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * ERASE THE FRONT 5CRENEAUX LIBRES
+     */
+    public void EraseAll() {
+        creneau1first.setText(null);
+        creneau2first.setText(null);
+        creneau3first.setText(null);
+        creneau4first.setText(null);
+        creneau5first.setText(null);
+        creneau6first.setText(null);
+        creneau7first.setText(null);
+        creneau8first.setText(null);
+        creneau9first.setText(null);
+
+        creneau1second.setText(null);
+        creneau2second.setText(null);
+        creneau3second.setText(null);
+        creneau4second.setText(null);
+        creneau5second.setText(null);
+        creneau6second.setText(null);
+        creneau7second.setText(null);
+        creneau8second.setText(null);
+        creneau9second.setText(null);
+    }
+
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * SET LABEL OF THE DATE
+     */
+    public void SetLabelDate(LocalDate date) {
+
+        // Format the date into the desired output format
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("EEEE, d MMMM yyyy", Locale.ENGLISH);
+        String formattedDate = date.format(outputFormatter);
+
+        // SET THE CURRENTDATE TO THE FRONT
+        CurrentPeriodDay.setText(formattedDate);
     }
 
 }

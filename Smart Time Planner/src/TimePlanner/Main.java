@@ -1,7 +1,6 @@
 package TimePlanner;
 
 import TimePlanner.Backend.Models.Utilisateur;
-//import TimePlanner.Backend.Models.Utilisateur;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -21,6 +21,7 @@
   -fx-border-radius: 12;
   -fx-border-insets: -5;
   -fx-border-color: linear-gradient(to top left, #f6b46f, #35acf1);
+  -fx-cursor: hand;
 }
 .button3:pressed {
   -fx-background-color: linear-gradient(to top left, #35acf1, #f6b46f);
@@ -29,9 +30,14 @@
   -fx-border-radius: 12;
   -fx-border-insets: -5;
   -fx-border-color: linear-gradient(to top left, #35acf1, #f6b46f);
+  -fx-cursor: hand;
 }
 
 .statut-accomplishement {
   -fx-background-color: #35acf1;
   -fx-background-radius: 30;
+}
+
+.edit-button {
+  -fx-cursor: hand;
 }

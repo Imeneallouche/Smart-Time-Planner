@@ -12,13 +12,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+   prefHeight="740.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/19"
+   xmlns:fx="http://javafx.com/fxml/1"
+   fx:controller="TimePlanner.Backend.Controllers.CalendarController">
    <left>
-      <VBox prefHeight="740.0" prefWidth="409.0" style="-fx-background-radius: 0 30 30 0;" styleClass="fifth-color" BorderPane.alignment="CENTER">
+      <VBox prefHeight="740.0" prefWidth="409.0" style="-fx-background-radius: 0 30 30 0;"
+         styleClass="fifth-color" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="79.0" prefWidth="430.0">
                <children>
-                  <Button mnemonicParsing="false" styleClass="Back-Button" text="Back">
+                  <Button mnemonicParsing="false" onAction="#handleBack" styleClass="Back-Button"
+                     text="Back">
                      <HBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </HBox.margin>
@@ -37,7 +42,8 @@
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="18.0" prefWidth="282.0" text="Welcome to your task manager calendar" textFill="#d0d0d0" />
+                        <Label prefHeight="18.0" prefWidth="282.0"
+                           text="Welcome to your task manager calendar" textFill="#d0d0d0" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -52,7 +58,7 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="362.0" prefWidth="462.0">
                      <children>
-                        <DatePicker />
+                        <DatePicker fx:id="DateTaches" onAction="#handleDateRealisation" />
                         <HBox alignment="CENTER" prefHeight="60.0" prefWidth="462.0">
                            <VBox.margin>
                               <Insets top="10.0" />
@@ -257,7 +263,8 @@
             </HBox>
             <HBox prefHeight="176.0" prefWidth="430.0">
                <children>
-                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true"
+                     preserveRatio="true">
                      <image>
                         <Image url="@../../assets/TaskCalendar.png" />
                      </image>
@@ -272,9 +279,10 @@
       <URL value="@TaskCalendar.css" />
    </stylesheets>
    <right>
-      <VBox alignment="TOP_CENTER" prefHeight="740.0" prefWidth="607.0" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="740.0" prefWidth="607.0"
+         BorderPane.alignment="CENTER">
          <children>
-            <Label text="Tuesday 2nd 2023" textFill="#111111">
+            <Label fx:id="actualdate" textFill="#111111">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -282,31 +290,32 @@
             <Label text="let's see what you got to accomplish for this day" />
             <HBox prefHeight="50.0" prefWidth="526.0">
                <VBox.margin>
-                  <Insets top="30.0" />
+                  <Insets bottom="10.0" top="30.0" />
                </VBox.margin>
                <children>
                   <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
                      <children>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="edit1" fitHeight="40.0" fitWidth="40.0"
+                           pickOnBounds="true" preserveRatio="true" styleClass="edit-button">
                            <image>
-                              <Image url="@../../assets/CheckSign.png" />
+                              <Image url="@../../assets/edit.png" />
                            </image>
                         </ImageView>
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="249.0">
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="222.0">
                      <children>
-                        <Label prefHeight="18.0" prefWidth="222.0" text="Here is one of the tasks that have " />
+                        <Label fx:id="nom1" prefHeight="18.0" prefWidth="224.0" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
                      <children>
-                        <Label text="Label" />
+                        <Label fx:id="creneau1" prefHeight="18.0" prefWidth="138.0" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
                      <children>
-                        <Label styleClass="statut-accomplishement" text="accomplished">
+                        <Label fx:id="statut1" styleClass="statut-accomplishement">
                            <padding>
                               <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
                            </padding>
@@ -319,26 +328,27 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
                      <children>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="edit2" fitHeight="40.0" fitWidth="40.0"
+                           pickOnBounds="true" preserveRatio="true" styleClass="edit-button">
                            <image>
-                              <Image url="@../../assets/CheckSign.png" />
+                              <Image url="@../../assets/edit.png" />
                            </image>
                         </ImageView>
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="249.0">
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="222.0">
                      <children>
-                        <Label prefHeight="18.0" prefWidth="222.0" text="Here is one of the tasks that have " />
+                        <Label fx:id="nom2" prefHeight="18.0" prefWidth="224.0" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
                      <children>
-                        <Label text="Label" />
+                        <Label fx:id="creneau2" prefHeight="18.0" prefWidth="154.0" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
                      <children>
-                        <Label styleClass="statut-accomplishement" text="accomplished">
+                        <Label fx:id="statut2" styleClass="statut-accomplishement">
                            <padding>
                               <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
                            </padding>
@@ -346,31 +356,35 @@
                      </children>
                   </VBox>
                </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
             </HBox>
             <HBox prefHeight="50.0" prefWidth="526.0">
                <children>
                   <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
                      <children>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="edit3" fitHeight="40.0" fitWidth="40.0"
+                           pickOnBounds="true" preserveRatio="true" styleClass="edit-button">
                            <image>
-                              <Image url="@../../assets/CheckSign.png" />
+                              <Image url="@../../assets/edit.png" />
                            </image>
                         </ImageView>
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="249.0">
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="222.0">
                      <children>
-                        <Label prefHeight="18.0" prefWidth="222.0" text="Here is one of the tasks that have " />
+                        <Label fx:id="nom3" prefHeight="18.0" prefWidth="224.0" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
                      <children>
-                        <Label text="Label" />
+                        <Label fx:id="creneau3" prefHeight="18.0" prefWidth="154.0" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
                      <children>
-                        <Label styleClass="statut-accomplishement" text="accomplished">
+                        <Label fx:id="statut3" styleClass="statut-accomplishement">
                            <padding>
                               <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
                            </padding>
@@ -378,10 +392,230 @@
                      </children>
                   </VBox>
                </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="526.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fx:id="edit4" fitHeight="40.0" fitWidth="40.0"
+                           pickOnBounds="true" preserveRatio="true" styleClass="edit-button">
+                           <image>
+                              <Image url="@../../assets/edit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="222.0">
+                     <children>
+                        <Label fx:id="nom4" prefHeight="18.0" prefWidth="224.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
+                     <children>
+                        <Label fx:id="creneau4" prefHeight="18.0" prefWidth="145.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
+                     <children>
+                        <Label fx:id="statut4" styleClass="statut-accomplishement">
+                           <padding>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="526.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fx:id="edit5" fitHeight="40.0" fitWidth="40.0"
+                           pickOnBounds="true" preserveRatio="true" styleClass="edit-button">
+                           <image>
+                              <Image url="@../../assets/edit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="222.0">
+                     <children>
+                        <Label fx:id="nom5" prefHeight="18.0" prefWidth="224.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
+                     <children>
+                        <Label fx:id="creneau5" prefHeight="18.0" prefWidth="170.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
+                     <children>
+                        <Label fx:id="statut5" styleClass="statut-accomplishement">
+                           <padding>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="526.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fx:id="edit6" fitHeight="40.0" fitWidth="40.0"
+                           pickOnBounds="true" preserveRatio="true" styleClass="edit-button">
+                           <image>
+                              <Image url="@../../assets/edit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="222.0">
+                     <children>
+                        <Label fx:id="nom6" prefHeight="18.0" prefWidth="224.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
+                     <children>
+                        <Label fx:id="creneau6" prefHeight="18.0" prefWidth="174.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
+                     <children>
+                        <Label fx:id="statut6" styleClass="statut-accomplishement">
+                           <padding>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="526.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fx:id="edit7" fitHeight="40.0" fitWidth="40.0"
+                           pickOnBounds="true" preserveRatio="true" styleClass="edit-button">
+                           <image>
+                              <Image url="@../../assets/edit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="222.0">
+                     <children>
+                        <Label fx:id="nom7" prefHeight="18.0" prefWidth="224.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
+                     <children>
+                        <Label fx:id="creneau7" prefHeight="18.0" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
+                     <children>
+                        <Label fx:id="statut7" styleClass="statut-accomplishement">
+                           <padding>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="526.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fx:id="edit8" fitHeight="40.0" fitWidth="40.0"
+                           pickOnBounds="true" preserveRatio="true" styleClass="edit-button">
+                           <image>
+                              <Image url="@../../assets/edit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="222.0">
+                     <children>
+                        <Label fx:id="nom8" prefHeight="18.0" prefWidth="224.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
+                     <children>
+                        <Label fx:id="creneau8" prefHeight="18.0" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
+                     <children>
+                        <Label fx:id="statut8" styleClass="statut-accomplishement">
+                           <padding>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="526.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fx:id="edit9" fitHeight="40.0" fitWidth="40.0"
+                           pickOnBounds="true" preserveRatio="true" styleClass="edit-button">
+                           <image>
+                              <Image url="@../../assets/edit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="222.0">
+                     <children>
+                        <Label fx:id="nom9" prefHeight="18.0" prefWidth="224.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="138.0">
+                     <children>
+                        <Label fx:id="creneau9" prefHeight="18.0" prefWidth="206.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="50.0" prefWidth="125.0">
+                     <children>
+                        <Label fx:id="statut9" styleClass="statut-accomplishement">
+                           <padding>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
             </HBox>
          </children>
          <BorderPane.margin>
             <Insets bottom="20.0" left="10.0" right="10.0" top="30.0" />
-         </BorderPane.margin></VBox>
+         </BorderPane.margin>
+      </VBox>
    </right>
 </BorderPane>

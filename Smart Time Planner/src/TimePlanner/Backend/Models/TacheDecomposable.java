@@ -11,7 +11,6 @@ public class TacheDecomposable extends Tache {
     public TacheDecomposable(String titre, String description, int dureeTache, int priorite, LocalDate dateLimite,
             String Categorie) {
         super(titre, description, dureeTache, priorite, dateLimite, Categorie);
-
         this.sousTaches = new ArrayList<>();
     }
 

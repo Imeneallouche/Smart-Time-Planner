@@ -1,7 +1,12 @@
 package TimePlanner.Backend.Controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import TimePlanner.Backend.Models.Tache;
+import TimePlanner.Backend.Models.Utilisateur;
+import TimePlanner.Backend.Services.DataManager;
+import TimePlanner.Backend.Services.TaskManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -246,20 +251,29 @@ public class AutomaticPlanController {
      */
     @FXML
     private void LaunchAutomaticSchedule() {
-
-        // here we go again
         /*
-         * public ArrayList<ScheduledTask> scheduleTasks(ArrayList<Tache> tasks) {
+         * 
+         * // BRING ALL THE TASKS INSERTED BY THE USER
+         * ArrayList<Tache> tasks = TaskManager.getInstance().getTasks();
+         * 
+         * // BRING THE USER
+         * Utilisateur utilisateur = DataManager.getInstance().getUtilisateur();
+         * 
+         * // WE WILL TAKE LE PROJET LE PLUS RECENT AN PUT THEM THERE
+         * int index =
+         * utilisateur.getProjets_en_cours().get(utilisateur.getProjets_en_cours().size(
+         * ) - 1);
+         * 
          * // Sort the tasks using the custom comparator
+         * // takign into consideration : priority, deadline and duration
          * tasks.sort(new TaskComparator());
          * 
-         * List<ScheduledTask> schedule = new ArrayList<>();
-         * List<TimeSlot> availableSlots = generateAvailableTimeSlots();
+         * for (Tache task : tasks) {
          * 
-         * for (Task task : tasks) {
          * boolean taskScheduled = false;
          * 
-         * for (TimeSlot slot : availableSlots) {
+         * for ( slot : availableSlots) {
+         * 
          * if (task.getDuration() <= slot.getDuration()) {
          * // Schedule the task in this time slot
          * schedule.add(
@@ -278,9 +292,7 @@ public class AutomaticPlanController {
          * }
          * }
          * 
-         * return schedule;
-         * }
-         * 
+         * // return schedule;
          */
     }
 

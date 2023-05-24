@@ -4,9 +4,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
 
+import TimePlanner.Backend.Models.Tache;
 import TimePlanner.Backend.Models.Utilisateur;
 import TimePlanner.Backend.Services.DataManager;
+import TimePlanner.Backend.Services.TaskManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -60,6 +63,10 @@ public class LoginController {
         if (utilisateur != null) {
             // Set the Utilisateur in the DataManager
             DataManager.getInstance().setUtilisateur(utilisateur);
+
+            // Set the tasks of the user (automatic pannification) in the Task Manager
+            ArrayList<Tache> tasks = new ArrayList<>();
+            TaskManager.getInstance().setTasks(tasks);
 
             // Load the next page
             loadNextPage(utilisateur);

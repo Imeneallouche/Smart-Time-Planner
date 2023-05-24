@@ -5,12 +5,15 @@ import java.time.LocalDate;
 
 public class Tache implements Serializable {
     // for the manual planification
+    private long serialVersionUID = 622491746546313510L;
+
     private String titre;
     private String description;
     private String categorie;
     private LocalDate Jour;
     private Creneau creneauTache;
     private EtatRealisation etatRealisation;
+    private boolean scheduled;
 
     // for the automatic planification
     private LocalDate dateLimite;
@@ -19,25 +22,27 @@ public class Tache implements Serializable {
 
     // CONSTRUCTOR FOR THE MANUAL PLANIFICATION
     public Tache(String titre, String description, String categorie, LocalDate jour, Creneau creneau,
-            EtatRealisation etat) {
+            EtatRealisation etat, boolean scheduled) {
         this.titre = titre;
         this.description = description;
         this.categorie = categorie;
         this.Jour = jour;
         this.creneauTache = creneau;
         this.etatRealisation = etat;
+        this.scheduled = scheduled;
         // this.etatRealisation = EtatRealisation.NOT_REALIZED;
     }
 
     // CONSTRUCTOR FOR THE AUTOMATIC PLANIFICATION 5TO BE REVIEWED)
     public Tache(String titre, String description, int dureeTache, int priorite, LocalDate dateLimite,
-            String categorie) {
+            String categorie, boolean schedule) {
         this.titre = titre;
         this.description = description;
         this.dureeTache = dureeTache;
         this.priorite = priorite;
         this.dateLimite = dateLimite;
         this.categorie = categorie;
+        this.scheduled = schedule;
 
         this.etatRealisation = EtatRealisation.NOT_REALIZED;
         // this.sousTaches = new ArrayList<>();
@@ -88,6 +93,10 @@ public class Tache implements Serializable {
     public LocalDate getJour() {
         return this.Jour;
     }
+
+    public boolean getScheduled() {
+        return this.scheduled;
+    }
     /*
      * 
      * 
@@ -132,6 +141,10 @@ public class Tache implements Serializable {
 
     public void setJour(LocalDate jour) {
         this.Jour = jour;
+    }
+
+    public void setScheduled(boolean schedule) {
+        this.scheduled = schedule;
     }
 
     /*

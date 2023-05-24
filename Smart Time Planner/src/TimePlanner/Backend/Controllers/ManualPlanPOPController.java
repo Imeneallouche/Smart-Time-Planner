@@ -149,7 +149,7 @@ public class ManualPlanPOPController implements Initializable {
             errorPlannifier.setText(null);
 
             // CREATE THE TASK
-            Tache task = new Tache(nom, description, categorie, jour, realcreneau, state);
+            Tache task = new Tache(nom, description, categorie, jour, realcreneau, state, true);
 
             // ADD THE NEW TASK TO THE CALENDAR
             utilisateur.getProjets_en_cours().get(index).ajouterTache(task);

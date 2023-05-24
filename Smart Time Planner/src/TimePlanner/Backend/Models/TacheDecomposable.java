@@ -9,8 +9,8 @@ public class TacheDecomposable extends Tache {
     private List<Tache> sousTaches;
 
     public TacheDecomposable(String titre, String description, int dureeTache, int priorite, LocalDate dateLimite,
-            String Categorie) {
-        super(titre, description, dureeTache, priorite, dateLimite, Categorie);
+            String Categorie, boolean schedule) {
+        super(titre, description, dureeTache, priorite, dateLimite, Categorie, schedule);
         this.sousTaches = new ArrayList<>();
     }
 

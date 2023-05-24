@@ -1,9 +1,11 @@
 package TimePlanner.Backend.Controllers;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
-
 import TimePlanner.Backend.Models.EtatRealisation;
+import TimePlanner.Backend.Models.Tache;
+import TimePlanner.Backend.Services.TaskManager;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -88,7 +90,7 @@ public class AutomaticPlanPOPController implements Initializable {
      * 
      * 
      * 
-     * EVENT LISTENER FOR THE PLANNIFIER LESSSSSS GOOOOOOOOOO
+     * EVENT LISTENER FOR THE ADD TASK
      */
 
     /*
@@ -104,4 +106,59 @@ public class AutomaticPlanPOPController implements Initializable {
      * 
      */
 
+    @FXML
+    private void handlePlannifier() {
+
+        // WE WILL BRING ALL THE VALUES FROM THE FRONTEND
+        String nom = NomTache.getText();
+        String description = DescriptionTache.getText();
+        String categorie = CategorieTache.getText();
+        EtatRealisation state = stateTache.getValue();
+        Integer prio = priority.getValue();
+        String type = TypeTache.getValue();
+        LocalDate dead = deadline.getValue();
+
+        boolean a = type != null && nom != null && nom != "";
+        boolean b = state != null;
+        boolean c = type == "Tache simple" && dureetache != null && isNumerical(dureetache.getText());
+        boolean d = prio != null && dead != null;
+
+        // CIF CONDITION VERIFIED PERFORM SCHEDULE
+        if (a && b && c && d) {
+            if (type == "Tache simple") {
+                // DIRECTALLY ADD IT TO THE TASK MANAGER
+                Tache task = new Tache(nom, description, categorie, null, null, state, false);
+                TaskManager.getInstance().addTask(task);
+
+            } else {
+                // OPEN THE NEW WINDOW TO INTRODUCE SUB TASKS
+
+            }
+        } else {
+            if (!c) {
+                errorPlannifier.setText("Durée de la tache doit etre un entier");
+            } else {
+                errorPlannifier.setText("Missing values");
+            }
+        }
+    }
+
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     *
+     *  
+     */
+    public static boolean isNumerical(String str) {
+        try {
+            int num = Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }

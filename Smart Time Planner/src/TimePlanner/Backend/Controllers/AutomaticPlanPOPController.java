@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 import TimePlanner.Backend.Models.EtatRealisation;
 import TimePlanner.Backend.Models.Tache;
+import TimePlanner.Backend.Models.TacheDecomposable;
 import TimePlanner.Backend.Services.TaskManager;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -113,26 +114,33 @@ public class AutomaticPlanPOPController implements Initializable {
         String nom = NomTache.getText();
         String description = DescriptionTache.getText();
         String categorie = CategorieTache.getText();
+
+        String type = TypeTache.getValue();
         EtatRealisation state = stateTache.getValue();
         Integer prio = priority.getValue();
-        String type = TypeTache.getValue();
         LocalDate dead = deadline.getValue();
 
-        boolean a = type != null && nom != null && nom != "";
-        boolean b = state != null;
-        boolean c = type == "Tache simple" && dureetache != null && isNumerical(dureetache.getText());
-        boolean d = prio != null && dead != null;
+        boolean a = nom != null && nom != "";
+        boolean b = description != null && description != "";
+        boolean c = categorie != null && categorie != "";
+
+        boolean d = type != null && state != null && prio != null && dead != null;
+        boolean e = isNumerical(dureetache.getText());
 
         // CIF CONDITION VERIFIED PERFORM SCHEDULE
-        if (a && b && c && d) {
-            if (type == "Tache simple") {
+        if (a && b && c && d && e) {
+            // LETSS FIX LA DUREE
+            int duree = Integer.parseInt(dureetache.getText());
+
+            // DIFFERENT INSTANCES FOR THE CLASSES
+            if (type.equals("Tache simple")) {
                 // DIRECTALLY ADD IT TO THE TASK MANAGER
                 Tache task = new Tache(nom, description, categorie, null, null, state, false);
                 TaskManager.getInstance().addTask(task);
-
             } else {
-                // OPEN THE NEW WINDOW TO INTRODUCE SUB TASKS
 
+                Tache task = new TacheDecomposable(nom, description, duree, prio, dead, categorie, false);
+                TaskManager.getInstance().addTask(task);
             }
         } else {
             if (!c) {

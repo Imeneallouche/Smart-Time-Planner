@@ -18,6 +18,7 @@ public class Main extends Application {
     }
 
     private static void createSerializedProfile() {
+
         // Create a sample profile object
         Utilisateur user = new Utilisateur("Imene", "imene@example.com",
                 "password123", "1234567890");

@@ -251,21 +251,20 @@ public class AutomaticPlanController {
      */
     @FXML
     private void LaunchAutomaticSchedule() {
+
+        // BRING ALL THE TASKS INSERTED BY THE USER
+        ArrayList<Tache> tasks = TaskManager.getInstance().getTasks();
+
+        // BRING THE USER
+        Utilisateur utilisateur = DataManager.getInstance().getUtilisateur();
+
+        // WE WILL TAKE LE PROJET LE PLUS RECENT AN PUT THEM THERE
+        int index = utilisateur.getProjets_en_cours().size() - 1;
+
+        // Sort the tasks using the custom comparator
+        // taking into consideration : priority, deadline and duration
+
         /*
-         * 
-         * // BRING ALL THE TASKS INSERTED BY THE USER
-         * ArrayList<Tache> tasks = TaskManager.getInstance().getTasks();
-         * 
-         * // BRING THE USER
-         * Utilisateur utilisateur = DataManager.getInstance().getUtilisateur();
-         * 
-         * // WE WILL TAKE LE PROJET LE PLUS RECENT AN PUT THEM THERE
-         * int index =
-         * utilisateur.getProjets_en_cours().get(utilisateur.getProjets_en_cours().size(
-         * ) - 1);
-         * 
-         * // Sort the tasks using the custom comparator
-         * // takign into consideration : priority, deadline and duration
          * tasks.sort(new TaskComparator());
          * 
          * for (Tache task : tasks) {
@@ -295,5 +294,17 @@ public class AutomaticPlanController {
          * // return schedule;
          */
     }
+
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * SORT THE TASKS
+     */
 
 }

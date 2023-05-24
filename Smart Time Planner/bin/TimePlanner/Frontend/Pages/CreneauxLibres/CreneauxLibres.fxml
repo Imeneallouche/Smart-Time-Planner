@@ -12,13 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-   prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19"
-   xmlns:fx="http://javafx.com/fxml/1"
-   fx:controller="TimePlanner.Backend.Controllers.CreneauxLibresController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.CreneauxLibresController">
    <right>
-      <VBox prefHeight="600.0" prefWidth="498.0" styleClass="fourth-color"
-         BorderPane.alignment="CENTER">
+      <VBox prefHeight="670.0" prefWidth="540.0" styleClass="fourth-color" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="63.0" prefWidth="490.0">
                <children>
@@ -31,8 +27,7 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="53.0" prefWidth="498.0">
                <children>
-                  <Label fx:id="CurrentPeriodDay" alignment="CENTER" prefHeight="26.0"
-                     prefWidth="328.0" textAlignment="CENTER">
+                  <Label fx:id="CurrentPeriodDay" alignment="CENTER" prefHeight="26.0" prefWidth="328.0" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -41,8 +36,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="71.0" prefWidth="498.0">
                <children>
-                  <VBox alignment="TOP_CENTER" prefHeight="83.0" prefWidth="100.0"
-                     style="-fx-background-color: #f0f0f0;">
+                  <VBox alignment="TOP_CENTER" prefHeight="83.0" prefWidth="100.0" style="-fx-background-color: #f0f0f0;">
                      <HBox.margin>
                         <Insets left="10.0" right="2.5" />
                      </HBox.margin>
@@ -52,8 +46,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="StarthourComboBox" prefHeight="26.0" prefWidth="126.0"
-                           styleClass="input">
+                        <ComboBox fx:id="StarthourComboBox" prefHeight="26.0" prefWidth="126.0" styleClass="input">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -63,8 +56,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="110.0"
-                     style="-fx-background-color: #f0f0f0;">
+                  <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="110.0" style="-fx-background-color: #f0f0f0;">
                      <HBox.margin>
                         <Insets left="2.5" right="25.0" />
                      </HBox.margin>
@@ -74,8 +66,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="StartMinuteComboBox" prefHeight="26.0" prefWidth="126.0"
-                           styleClass="input">
+                        <ComboBox fx:id="StartMinuteComboBox" prefHeight="26.0" prefWidth="126.0" styleClass="input">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -85,8 +76,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="100.0"
-                     style="-fx-background-color: #f0f0f0;">
+                  <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="100.0" style="-fx-background-color: #f0f0f0;">
                      <HBox.margin>
                         <Insets left="25.0" right="2.5" />
                      </HBox.margin>
@@ -96,8 +86,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="EndHourComboBox" prefHeight="26.0" prefWidth="126.0"
-                           styleClass="input">
+                        <ComboBox fx:id="EndHourComboBox" prefHeight="26.0" prefWidth="126.0" styleClass="input">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -107,8 +96,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="110.0" prefWidth="110.0"
-                     style="-fx-background-color: #f0f0f0;">
+                  <VBox alignment="TOP_CENTER" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: #f0f0f0;">
                      <HBox.margin>
                         <Insets left="2.5" right="10.0" />
                      </HBox.margin>
@@ -118,8 +106,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="EndMinuteComboBox" prefHeight="26.0" prefWidth="126.0"
-                           styleClass="input">
+                        <ComboBox fx:id="EndMinuteComboBox" prefHeight="26.0" prefWidth="126.0" styleClass="input">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -338,9 +325,7 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="AjouterCreneauButton" mnemonicParsing="false"
-                           onAction="#handleAjouterCreneauController" styleClass="Ajouter-Bouton"
-                           text="Ajouter le créneau">
+                        <Button fx:id="AjouterCreneauButton" mnemonicParsing="false" onAction="#handleAjouterCreneauController" styleClass="Ajouter-Bouton" text="Ajouter le créneau">
                            <padding>
                               <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                            </padding>
@@ -350,9 +335,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="nextButton" mnemonicParsing="false"
-                           onAction="#handleNextButton" styleClass="Schedule-Button" text="Next"
-                           textFill="#f4f4f4">
+                        <Button fx:id="nextButton" mnemonicParsing="false" onAction="#handleNextButton" styleClass="Schedule-Button" text="Next" textFill="#f4f4f4">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
@@ -374,8 +357,7 @@
       <URL value="@CreneauxLibres.css" />
    </stylesheets>
    <center>
-      <VBox prefHeight="600.0" prefWidth="366.0" styleClass="third-color"
-         BorderPane.alignment="CENTER">
+      <VBox prefHeight="670.0" prefWidth="406.0" styleClass="third-color" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="106.0" prefWidth="394.0">
                <children>
@@ -386,12 +368,11 @@
                   </Label>
                </children>
             </HBox>
-            <HBox prefHeight="116.0" prefWidth="394.0">
+            <HBox prefHeight="116.0" prefWidth="432.0">
                <children>
                   <VBox alignment="CENTER" prefHeight="116.0" prefWidth="443.0">
                      <children>
-                        <Label text="We are not far from accomplishing the primary steps "
-                           textFill="#f4f4f4">
+                        <Label text="We are not far from accomplishing the primary steps " textFill="#f4f4f4">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -415,10 +396,9 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="378.0" prefWidth="394.0">
+            <HBox alignment="CENTER" prefHeight="378.0" prefWidth="461.0">
                <children>
-                  <ImageView fitHeight="290.0" fitWidth="340.0" pickOnBounds="true"
-                     preserveRatio="true">
+                  <ImageView fitHeight="290.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/CreneauxLibres.png" />
                      </image>

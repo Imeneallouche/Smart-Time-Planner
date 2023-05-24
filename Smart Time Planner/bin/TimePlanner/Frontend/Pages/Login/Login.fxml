@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.LoginController">
    <left>
       <VBox prefHeight="600.0" prefWidth="404.0" styleClass="third-color" BorderPane.alignment="CENTER">
          <children>
@@ -59,7 +59,7 @@
       </VBox>
    </left>
    <right>
-      <VBox prefHeight="600.0" prefWidth="498.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="670.0" prefWidth="598.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -70,7 +70,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="496.0">
+            <HBox alignment="CENTER" prefHeight="130.0" prefWidth="596.0">
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="350.0">
                      <children>
@@ -79,13 +79,13 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="30.0" prefWidth="350.0" styleClass="input" fx:id="usernameField" />
-                        <Label prefHeight="18.0" prefWidth="384.0" fx:id="usernameErrorMessage" textFill="#b71d1d"/>
+                        <TextField fx:id="usernameField" prefHeight="30.0" prefWidth="350.0" styleClass="input" />
+                        <Label fx:id="usernameErrorMessage" prefHeight="18.0" prefWidth="384.0" textFill="#b71d1d" />
                      </children>
                   </VBox>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="130.0" prefWidth="200.0">
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="350.0">
                      <children>
@@ -94,8 +94,8 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <PasswordField prefHeight="31.0" prefWidth="350.0" styleClass="input" fx:id="passwordField" />
-                        <Label prefHeight="18.0" prefWidth="384.0" fx:id="passwordErrorMessage" textFill="#b71d1d"/>
+                        <PasswordField fx:id="passwordField" prefHeight="31.0" prefWidth="350.0" styleClass="input" />
+                        <Label fx:id="passwordErrorMessage" prefHeight="18.0" prefWidth="384.0" textFill="#b71d1d" />
                      </children>
                   </VBox>
                </children>
@@ -109,7 +109,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="245.0">
                      <children>
-                        <Button mnemonicParsing="false" styleClass="Cancel-Button" text="Sign In" onAction="#SignIn" fx:id="SignInButton">
+                        <Button fx:id="SignInButton" mnemonicParsing="false" onAction="#SignIn" styleClass="Cancel-Button" text="Sign In">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </padding>
@@ -121,7 +121,7 @@
             <Separator prefHeight="0.0" prefWidth="496.0" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" styleClass="Schedule-Button" text="Sign Up" textFill="WHITE" onAction="#SignUp" fx:id="SignUpButton">
+                  <Button fx:id="SignUpButton" mnemonicParsing="false" onAction="#SignUp" styleClass="Schedule-Button" text="Sign Up" textFill="WHITE">
                      <padding>
                         <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
                      </padding>

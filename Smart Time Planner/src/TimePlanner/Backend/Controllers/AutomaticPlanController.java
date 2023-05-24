@@ -19,6 +19,9 @@ public class AutomaticPlanController {
     @FXML
     private Button CheckCalendar;
 
+    @FXML
+    private Button automaticSchedule;
+
     /*
      * 
      * 
@@ -225,6 +228,60 @@ public class AutomaticPlanController {
             e.printStackTrace();
         }
 
+    }
+
+    /*
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * AUTOMATIC SCHEDULE SUUUUUIIIIIIIIIIIIIIIIII
+     */
+    @FXML
+    private void LaunchAutomaticSchedule() {
+
+        // here we go again
+        /*
+         * public ArrayList<ScheduledTask> scheduleTasks(ArrayList<Tache> tasks) {
+         * // Sort the tasks using the custom comparator
+         * tasks.sort(new TaskComparator());
+         * 
+         * List<ScheduledTask> schedule = new ArrayList<>();
+         * List<TimeSlot> availableSlots = generateAvailableTimeSlots();
+         * 
+         * for (Task task : tasks) {
+         * boolean taskScheduled = false;
+         * 
+         * for (TimeSlot slot : availableSlots) {
+         * if (task.getDuration() <= slot.getDuration()) {
+         * // Schedule the task in this time slot
+         * schedule.add(
+         * new ScheduledTask(task, slot.getStart(),
+         * slot.getStart().plusMinutes(task.getDuration())));
+         * slot.setStart(slot.getStart().plusMinutes(task.getDuration()));
+         * slot.setDuration(slot.getDuration() - task.getDuration());
+         * taskScheduled = true;
+         * break;
+         * }
+         * }
+         * 
+         * if (!taskScheduled) {
+         * // Task couldn't be scheduled in any available time slot
+         * System.out.println("Unable to schedule task: " + task.getName());
+         * }
+         * }
+         * 
+         * return schedule;
+         * }
+         * 
+         */
     }
 
 }

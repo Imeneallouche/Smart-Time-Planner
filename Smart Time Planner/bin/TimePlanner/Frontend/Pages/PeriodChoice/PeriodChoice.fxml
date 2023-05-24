@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.PeriodChoiceController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.PeriodChoiceController">
    <left>
       <VBox prefHeight="600.0" prefWidth="410.0" styleClass="third-color" BorderPane.alignment="CENTER">
          <children>
@@ -67,7 +67,7 @@
       </VBox>
    </left>
    <right>
-      <VBox prefHeight="600.0" prefWidth="490.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="670.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="75.0" prefWidth="490.0">
                <children>
@@ -78,7 +78,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -102,7 +102,7 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox prefHeight="143.0" prefWidth="490.0">
+            <HBox alignment="CENTER" prefHeight="143.0" prefWidth="490.0">
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="163.0" prefWidth="490.0">
                      <children>
@@ -126,7 +126,7 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox prefHeight="143.0" prefWidth="490.0">
+            <HBox alignment="CENTER" prefHeight="143.0" prefWidth="490.0">
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="163.0" prefWidth="490.0">
                      <children>
@@ -150,7 +150,7 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox prefHeight="143.0" prefWidth="490.0">
+            <HBox alignment="CENTER" prefHeight="143.0" prefWidth="490.0">
                <children>
                   <VBox alignment="CENTER" prefHeight="163.0" prefWidth="245.0">
                      <HBox.margin>

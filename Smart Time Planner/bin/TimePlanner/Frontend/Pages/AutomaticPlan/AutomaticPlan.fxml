@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.AutomaticPlanController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.AutomaticPlanController">
    <left>
       <VBox prefHeight="600.0" prefWidth="235.0" styleClass="primary-color" BorderPane.alignment="CENTER">
          <children>
@@ -209,7 +209,7 @@
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="445.0" prefWidth="665.0" spacing="25.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="111.0" prefWidth="765.0">
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -218,7 +218,7 @@
                         </ImageView>
                         <Label text="Plannifiez vos taches automatiquemet" textFill="#00002c">
                            <font>
-                              <Font name="System Bold" size="16.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
                            <padding>
                               <Insets bottom="20.0" left="10.0" right="50.0" top="20.0" />
@@ -232,7 +232,7 @@
                         <Insets bottom="10.0" left="20.0" top="10.0" />
                      </padding>
                   </HBox>
-                  <VBox prefHeight="335.0" prefWidth="665.0">
+                  <VBox prefHeight="290.0" prefWidth="765.0">
                      <padding>
                         <Insets left="40.0" right="40.0" />
                      </padding>
@@ -241,6 +241,9 @@
                            <VBox.margin>
                               <Insets bottom="20.0" />
                            </VBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
                         </Label>
                         <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="585.0">
                            <children>
@@ -253,9 +256,12 @@
                                     </ImageView>
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="427.0">
+                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="500.0">
                                  <children>
-                                    <Label text="Introduire de nom et description de votre tache" />
+                                    <Label text="Introduire de nom et description de votre tache">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -280,9 +286,12 @@
                                     </ImageView>
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="427.0">
+                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="500.0">
                                  <children>
-                                    <Label text="Introduire une priorité et deadline souhaités de votre tache" />
+                                    <Label text="Introduire une priorité et deadline souhaités de votre tache">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -307,9 +316,12 @@
                                     </ImageView>
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="427.0">
+                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="500.0">
                                  <children>
-                                    <Label text="Traitement et planification automatique" />
+                                    <Label text="Traitement et planification automatique">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -334,9 +346,12 @@
                                     </ImageView>
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="427.0">
+                              <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="500.0">
                                  <children>
-                                    <Label text="Insertion de votre tache dans le calendrier" />
+                                    <Label text="Insertion de votre tache dans le calendrier">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -355,20 +370,29 @@
 
                </children>
             </VBox>
-            <HBox alignment="CENTER_RIGHT" prefHeight="223.0" prefWidth="665.0">
+            <HBox alignment="CENTER" prefHeight="71.0" prefWidth="765.0">
                <children>
-                  <VBox alignment="CENTER" prefHeight="211.0" prefWidth="199.0">
+                  <Button fx:id="automaticSchedule" mnemonicParsing="false" onAction="#LaunchAutomaticSchedule" styleClass="button3" text="Lancement de plannification automatique">
+                     <padding>
+                        <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="227.0" prefWidth="765.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="223.0" prefWidth="249.0">
                      <children>
-                        <Button fx:id="CheckCalendar" mnemonicParsing="false" onAction="#handleCheckCalendar" styleClass="button3" text="Check Calandar">
+                        <Button fx:id="CheckCalendar1" mnemonicParsing="false" onAction="#handleCheckCalendar" styleClass="button3" text="Check Calandar">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </padding>
                         </Button>
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="211.0" prefWidth="199.0">
+                  <VBox alignment="CENTER" prefHeight="223.0" prefWidth="249.0">
                      <children>
-                        <Button fx:id="PlanTask" mnemonicParsing="false" onAction="#handlePlanTask" styleClass="button3" text="Specifier une taches">
+                        <Button fx:id="PlanTask1" mnemonicParsing="false" onAction="#handlePlanTask" styleClass="button3" text="Specifier une taches">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </padding>

@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import TimePlanner.Backend.Models.Projet;
 import TimePlanner.Backend.Models.Utilisateur;
 import TimePlanner.Backend.Services.DataManager;
+import TimePlanner.Backend.Services.ProjectManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class ProjectController implements Initializable {
@@ -210,6 +212,56 @@ public class ProjectController implements Initializable {
                 break;
         }
 
+    }
+
+    @FXML
+    private void handleStats(MouseEvent event) {
+
+        VBox vbox = (VBox) event.getSource();
+        Label label = (Label) vbox.getChildren().get(1); // Assuming the Label is the second child element of the VBox
+        String projectName = label.getText();
+
+        for (Projet project : utilisateur.getProjets_en_cours()) {
+            if (project.getNom().equals(projectName)) {
+
+                // ADD THE PROJECT TO THE PROJECTMANAGER
+                ProjectManager.getInstance().setProject(project);
+
+                // OPEN THE NEW STATS PAGE
+                String PageRouter = "Historique/Historique.fxml";
+                try {
+                    // Load the desired page
+                    Parent nextPage = FXMLLoader.load(getClass().getResource("../../Frontend/Pages/" + PageRouter));
+
+                    // Create a new Stage
+                    Stage newStage = new Stage();
+                    newStage.setTitle("Statistics of " + projectName);
+
+                    // Set the content of the new stage to the loaded page
+                    Scene newScene = new Scene(nextPage);
+
+                    // Set the width and height of the new stage
+                    double stageWidth = 700; // Specify the desired width
+                    double stageHeight = 800; // Specify the desired height
+
+                    newStage.setWidth(stageWidth);
+                    newStage.setHeight(stageHeight);
+
+                    // Set the scene of the new stage
+                    newStage.setScene(newScene);
+
+                    // Show the new stage
+                    newStage.show();
+
+                    // Close the current stage (optional)
+                    // Stage currentStage = (Stage) PlanTask.getScene().getWindow();
+                    // currentStage.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
     }
 
 }

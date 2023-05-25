@@ -86,6 +86,19 @@ public class LoginController {
 
     @FXML
     public void SignUp() {
+        String PageRouter = "Registration/Registration.fxml";
+        try {
+            Parent next = FXMLLoader.load(getClass().getResource("../../Frontend/Pages/" + PageRouter));
+
+            // Get the current scene
+            Scene currentScene = SignInButton.getScene();
+
+            // Set the root of the current scene to the Step2 root
+            currentScene.setRoot(next);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

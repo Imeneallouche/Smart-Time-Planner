@@ -21,9 +21,10 @@ public class TaskComparator implements Comparator<Tache> {
 
     private double calculateScore(Tache task) {
 
-        int priorityScore = task.getPriorite() * PRIORITY_WEIGHT;
+        int priorityScore = (task.getPriorite()) * PRIORITY_WEIGHT;
         double durationScore = task.getDureeTache() * DURATION_WEIGHT / 30;
-        int deadlineScore = task.getDateLimite().compareTo(LocalDate.now()) * DEADLINE_WEIGHT;
+        int deadlineScore = (task.getDateLimite() != null ? task.getDateLimite().compareTo(LocalDate.now()) : 0)
+                * DEADLINE_WEIGHT;
 
         // Calculate the overall score
         return priorityScore + durationScore + deadlineScore;

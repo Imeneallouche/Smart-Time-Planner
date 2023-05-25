@@ -297,8 +297,9 @@
                                 </HBox>
                                 <HBox alignment="CENTER_LEFT" prefHeight="126.0" prefWidth="685.0">
                                     <children>
-                                        <VBox alignment="CENTER" prefHeight="200.0"
-                                            prefWidth="100.0" styleClass="edit-button">
+                                        <VBox alignment="CENTER" onMouseClicked="#handleStats"
+                                            prefHeight="200.0" prefWidth="100.0"
+                                            styleClass="edit-button">
                                             <HBox.margin>
                                                 <Insets left="15.0" right="15.0" />
                                             </HBox.margin>
@@ -312,8 +313,9 @@
                                                 <Label fx:id="projet1" />
                                             </children>
                                         </VBox>
-                                        <VBox alignment="CENTER" prefHeight="200.0"
-                                            prefWidth="100.0" styleClass="edit-button">
+                                        <VBox alignment="CENTER" onMouseClicked="#handleStats"
+                                            prefHeight="200.0" prefWidth="100.0"
+                                            styleClass="edit-button">
                                             <children>
                                                 <ImageView fitHeight="80.0" fitWidth="80.0"
                                                     pickOnBounds="true" preserveRatio="true">
@@ -327,8 +329,9 @@
                                                 <Insets left="15.0" right="15.0" />
                                             </HBox.margin>
                                         </VBox>
-                                        <VBox alignment="CENTER" prefHeight="200.0"
-                                            prefWidth="100.0" styleClass="edit-button">
+                                        <VBox alignment="CENTER" onMouseClicked="#handleStats"
+                                            prefHeight="200.0" prefWidth="100.0"
+                                            styleClass="edit-button">
                                             <children>
                                                 <ImageView fitHeight="80.0" fitWidth="80.0"
                                                     pickOnBounds="true" preserveRatio="true">
@@ -342,8 +345,9 @@
                                                 <Insets left="15.0" right="15.0" />
                                             </HBox.margin>
                                         </VBox>
-                                        <VBox alignment="CENTER" prefHeight="200.0"
-                                            prefWidth="100.0" styleClass="edit-button">
+                                        <VBox alignment="CENTER" onMouseClicked="#handleStats"
+                                            prefHeight="200.0" prefWidth="100.0"
+                                            styleClass="edit-button">
                                             <children>
                                                 <ImageView fitHeight="80.0" fitWidth="80.0"
                                                     pickOnBounds="true" preserveRatio="true">
@@ -357,8 +361,9 @@
                                                 <Insets left="15.0" right="15.0" />
                                             </HBox.margin>
                                         </VBox>
-                                        <VBox alignment="CENTER" prefHeight="200.0"
-                                            prefWidth="100.0" styleClass="edit-button">
+                                        <VBox alignment="CENTER" onMouseClicked="#handleStats"
+                                            prefHeight="200.0" prefWidth="100.0"
+                                            styleClass="edit-button">
                                             <children>
                                                 <ImageView fitHeight="80.0" fitWidth="80.0"
                                                     pickOnBounds="true" preserveRatio="true">
@@ -412,7 +417,6 @@
     </center>
     <stylesheets>
         <URL value="@../../values/styles.css" />
-        <URL value="@ManualPlan.css" />
         <URL value="@../Calendar/TaskCalendar.css" />
         <URL value="@../Profile/Profile.css" />
     </stylesheets>

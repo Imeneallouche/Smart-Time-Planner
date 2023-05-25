@@ -14,7 +14,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimePlanner.Backend.Controllers.CreneauxLibresController">
    <right>
-      <VBox prefHeight="670.0" prefWidth="540.0" styleClass="fourth-color" BorderPane.alignment="CENTER">
+      <VBox prefHeight="670.0" prefWidth="540.0" styleClass="sixth-color" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="63.0" prefWidth="490.0">
                <children>

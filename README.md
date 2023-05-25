@@ -81,5 +81,24 @@ Nineth Page: Automatic Planification Pop up
 <br><br><br>
 
 ```yaml
-Tenth Page: 
+Tenth Page: Calendar page
 ```
+
+![image](https://github.com/Imeneallouche/Smart-Time-Planner/assets/89279264/da079ac2-7850-4423-b5d4-b9eaf6c77543)
+
+<br><br><br>
+
+```yaml
+Eleventh Page: Project page
+```
+
+![image](https://github.com/Imeneallouche/Smart-Time-Planner/assets/89279264/2bcdb44f-8380-4738-8220-55839feec24f)
+
+<br><br><br>
+
+```yaml
+Twelveth Page: Project Statistics page
+```
+
+![image](https://github.com/Imeneallouche/Smart-Time-Planner/assets/89279264/a2eadf48-6d6b-4ef5-bf76-111958d6dc4c)
+

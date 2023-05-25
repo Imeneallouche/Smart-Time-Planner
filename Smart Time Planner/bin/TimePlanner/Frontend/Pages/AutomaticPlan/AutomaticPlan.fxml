@@ -383,7 +383,7 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="223.0" prefWidth="249.0">
                      <children>
-                        <Button fx:id="CheckCalendar1" mnemonicParsing="false" onAction="#handleCheckCalendar" styleClass="button3" text="Check Calandar">
+                        <Button fx:id="CheckCalendar" mnemonicParsing="false" onAction="#handleCheckCalendar" styleClass="button3" text="Check Calandar">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </padding>
@@ -392,7 +392,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="223.0" prefWidth="249.0">
                      <children>
-                        <Button fx:id="planTask" mnemonicParsing="false" onAction="#handlePlanTask" styleClass="button3" text="Specifier une taches">
+                        <Button fx:id="PlanTask" mnemonicParsing="false" onAction="#handlePlanTask" styleClass="button3" text="Specifier une taches">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </padding>

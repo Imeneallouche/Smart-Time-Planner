@@ -150,7 +150,7 @@ public class ManualPlanController {
 
             // Create a new Stage
             Stage newStage = new Stage();
-            newStage.setTitle("Calendar");
+            newStage.setTitle("Manual planification task");
 
             // Set the content of the new stage to the loaded page
             Scene newScene = new Scene(nextPage);

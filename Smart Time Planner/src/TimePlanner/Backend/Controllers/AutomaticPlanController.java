@@ -1,12 +1,20 @@
 package TimePlanner.Backend.Controllers;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.time.Duration;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 
+import TimePlanner.Backend.Models.Creneau;
 import TimePlanner.Backend.Models.Tache;
+import TimePlanner.Backend.Models.TacheDecomposable;
 import TimePlanner.Backend.Models.Utilisateur;
 import TimePlanner.Backend.Services.DataManager;
 import TimePlanner.Backend.Services.TaskManager;
+import TimePlanner.Backend.Models.TaskComparator;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -252,6 +260,9 @@ public class AutomaticPlanController {
     @FXML
     private void LaunchAutomaticSchedule() {
 
+        // BOOLEAN FOR MISSING SCHEDULED TASKS
+        boolean missing = false;
+
         // BRING ALL THE TASKS INSERTED BY THE USER
         ArrayList<Tache> tasks = TaskManager.getInstance().getTasks();
 
@@ -261,50 +272,123 @@ public class AutomaticPlanController {
         // WE WILL TAKE LE PROJET LE PLUS RECENT AN PUT THEM THERE
         int index = utilisateur.getProjets_en_cours().size() - 1;
 
+        // GET THE FREE SLOTS OF TIMES OF THAT PROJECT
+        ArrayList<ArrayList<Creneau>> freeslots = utilisateur.getProjets_en_cours().get(index).getPeriode()
+                .getCreneaux();
+
+        // GET DATE DEBUT DU PROJET
+        LocalDate datedebutprojet = utilisateur.getProjets_en_cours().get(index).getPeriode().getStartDate();
+
         // Sort the tasks using the custom comparator
         // taking into consideration : priority, deadline and duration
 
-        /*
-         * tasks.sort(new TaskComparator());
-         * 
-         * for (Tache task : tasks) {
-         * 
-         * boolean taskScheduled = false;
-         * 
-         * for ( slot : availableSlots) {
-         * 
-         * if (task.getDuration() <= slot.getDuration()) {
-         * // Schedule the task in this time slot
-         * schedule.add(
-         * new ScheduledTask(task, slot.getStart(),
-         * slot.getStart().plusMinutes(task.getDuration())));
-         * slot.setStart(slot.getStart().plusMinutes(task.getDuration()));
-         * slot.setDuration(slot.getDuration() - task.getDuration());
-         * taskScheduled = true;
-         * break;
-         * }
-         * }
-         * 
-         * if (!taskScheduled) {
-         * // Task couldn't be scheduled in any available time slot
-         * System.out.println("Unable to schedule task: " + task.getName());
-         * }
-         * }
-         * 
-         * // return schedule;
-         */
+        Collections.sort(tasks, new TaskComparator());
+
+        for (Tache task : tasks) {
+
+            boolean taskScheduled = false;
+            int j = 0;
+
+            // for (int j = 0; j < freeslots.size(); j++) {
+            while (!taskScheduled && j < freeslots.size()) {
+
+                int k = 0;
+                // for (int k = 0; k < freeslots.get(j).size(); k++) {
+                while (!taskScheduled && k < freeslots.get(j).size()) {
+                    // RETRIEVE THE SLOT
+                    Creneau slot = new Creneau(freeslots.get(j).get(k).getDebut(), freeslots.get(j).get(k).getFin());
+
+                    long dureeslot = Duration.between(slot.getDebut(), slot.getFin()).toMinutes();
+
+                    if (task instanceof TacheDecomposable) {
+                        // ANOTHER STORY TO TELL
+                        // CHECK WHETHER THE TIME SLOT FITS ON THE CRENEAU
+                        if (task.getDureeTache() <= dureeslot) {
+
+                            // CREATE LE CRENEAU DATE START + DATE START + DURATION OF TASK
+                            Creneau creneau = new Creneau(slot.getDebut(),
+                                    slot.getDebut().plusMinutes(task.getDureeTache()));
+
+                            // CREATE THE SHCEDULED SIMPLE TASK
+                            Tache scheduledtask = new Tache(task.getTitre(), task.getDescription(), task.getCategorie(),
+                                    datedebutprojet.plusDays(j), creneau, task.getEtatRealisation(), true);
+
+                            // ADD THE TASK TO THE ARRAYLIST OF TASKS
+                            utilisateur.getProjets_en_cours().get(index).ajouterTache(scheduledtask);
+
+                            // UPDATE THE REMAINING FREE SLOT IN THE DATA MANAGER
+                            freeslots.get(j).get(k).setDebut(slot.getDebut().plusMinutes(task.getDureeTache()));
+
+                            // LITERALLY BREAK FROM THE TWO LOOPS
+                            break;
+                        }
+
+                        else {
+
+                            // NOT FINISHED YET (STILL ON WORK)
+
+                        }
+                    }
+
+                    else {
+
+                        // CHECK WHETHER THE TIME SLOT FITS ON THE CRENEAU
+                        if (task.getDureeTache() <= dureeslot) {
+
+                            // CREATE LE CRENEAU DATE START + DATE START + DURATION OF TASK
+                            Creneau creneau = new Creneau(slot.getDebut(),
+                                    slot.getDebut().plusMinutes(task.getDureeTache()));
+
+                            // CREATE THE SHCEDULED SIMPLE TASK
+                            Tache scheduledtask = new Tache(task.getTitre(), task.getDescription(), task.getCategorie(),
+                                    datedebutprojet.plusDays(j), creneau, task.getEtatRealisation(), true);
+
+                            // ADD THE TASK TO THE ARRAYLIST OF TASKS
+                            utilisateur.getProjets_en_cours().get(index).ajouterTache(scheduledtask);
+
+                            // UPDATE THE REMAINING FREE SLOT IN THE DATA MANAGER
+                            freeslots.get(j).get(k).setDebut(slot.getDebut().plusMinutes(task.getDureeTache()));
+
+                            // LITERALLY BREAK FROM THE TWO LOOPS
+                            break;
+                        }
+                    }
+                    k++;
+                }
+                j++;
+            }
+
+            if (!taskScheduled) {
+                missing = true;
+            }
+
+        }
+        serializeUser(utilisateur);
     }
 
-    /*
+    /**
      * 
      * 
      * 
      * 
      * 
      * 
-     * 
-     * 
-     * SORT THE TASKS
+     * SERIALIZATION
      */
+    private void serializeUser(Utilisateur utilisateur) {
 
+        String username = utilisateur.getProfile().getNom().toLowerCase().replaceAll(" ", "");
+
+        try {
+            FileOutputStream fileOut = new FileOutputStream("./src/TimePlanner/UsersInformation/" + username + ".ser",
+                    false);
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(utilisateur);
+            out.close();
+            fileOut.close();
+            System.out.println("Profile serialized successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

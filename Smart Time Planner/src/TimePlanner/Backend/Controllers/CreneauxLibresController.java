@@ -108,7 +108,7 @@ public class CreneauxLibresController implements Initializable {
 
     Utilisateur utilisateur = DataManager.getInstance().getUtilisateur();
 
-    int index = 0;
+    int index = utilisateur.getProjets_en_cours().size() - 1;
 
     LocalDate firstday = utilisateur.getProjets_en_cours().get(index).getPeriode().getStartDate();
     LocalDate endday = utilisateur.getProjets_en_cours().get(index).getPeriode().getEndDate();

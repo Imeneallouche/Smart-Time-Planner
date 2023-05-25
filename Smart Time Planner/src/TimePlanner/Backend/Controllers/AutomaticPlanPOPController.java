@@ -91,20 +91,10 @@ public class AutomaticPlanPOPController implements Initializable {
      * 
      * 
      * 
+     * 
+     * 
+     * 
      * EVENT LISTENER FOR THE ADD TASK
-     */
-
-    /*
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
      */
 
     @FXML
@@ -142,6 +132,11 @@ public class AutomaticPlanPOPController implements Initializable {
                 Tache task = new TacheDecomposable(nom, description, duree, prio, dead, categorie, false);
                 TaskManager.getInstance().addTask(task);
             }
+
+            // NOW LETS CLOSE UP THE WINDOW
+            Stage currentStage = (Stage) NomTache.getScene().getWindow();
+            currentStage.close();
+
         } else {
             if (!c) {
                 errorPlannifier.setText("Durée de la tache doit etre un entier");
